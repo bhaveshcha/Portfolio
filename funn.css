@@ -1,0 +1,776 @@
+.frame .div-header {
+  margin-bottom: 128px;
+}
+
+
+.frame .grid > .content:last-child {
+  margin-bottom: 0;  /* Removes the margin from the last content block */
+}
+
+
+
+
+
+
+
+.div-header .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 78.4px 0px 80.6px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.div-header .fun-stuff-work {
+    position: relative;
+    max-width: 950px;
+    flex: 0 0 auto;
+}
+
+.div-header .p-subtitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 79.01px 0px 79.99px;
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    flex: 0 0 auto;
+}
+
+.div-header .a-home-loan-that {
+    position: relative;
+    width: fit-content;
+    margin-top: -1px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #29292b;
+
+    text-align: center;
+    letter-spacing: -1px;
+    line-height: 41.6px;
+}
+
+
+
+
+
+
+
+
+.grid {
+  max-width: 1136px;
+  margin: 0 auto;
+}
+
+
+
+
+.grid {
+  --gap: 1em;
+  --columns: 3;
+  max-width: 1136px;
+  margin: 0 auto;
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(var(--columns), 1fr);
+  gap: var(--gap);
+  align-items: start; /* Prevents items from stretching vertically */
+}
+
+
+
+
+.grid > * {
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+}
+
+@supports (grid-template-rows: masonry) {
+  .grid {
+    grid-template-rows: masonry;
+    grid-auto-flow: dense;
+    align-tracks: end;
+  }
+  
+  .grid > * {
+    margin-bottom: 0em;
+  }
+}
+
+.content1.featured {
+  grid-column: span 2;
+}
+
+
+
+
+:root {
+  --ff-primary: basic-sans, sans-serif;
+  --clr-primary: #ee6352;
+  --clr-body: #333;
+  --clr-bg: #ddd;
+  --spacer: 1rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  
+}
+
+h1 {
+  margin: 3rem 0;
+  text-align: center;
+  font-size: clamp(2rem, 1rem + 3vw, 6rem);
+  font-weight: 300;
+  line-height: 1;
+  opacity: 0.2;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, var(--spacer));
+}
+
+
+.content, .content1 {
+  position: relative;
+  background: #f5f5f7;
+  border-radius: 20px;
+  height: auto; /* Ensures the content does not stretch beyond its natural height */
+  overflow: hidden; /* Clips any overflowing content */
+}
+
+
+.content {
+  padding: 2em;
+}
+
+
+.content1 {
+  /* padding: 5em; */
+}
+
+
+
+.arrow-top-right {
+  position: absolute;
+  width: 47px;
+  height: 47px;
+  bottom: 2em; /* Distance from the bottom edge, equal to the padding */
+  left: 2em;  /* Distance from the left edge, equal to the padding */
+  top: auto;  /* Reset the top value so it doesn't interfere */
+}
+
+
+
+.title {
+  font-weight: 900;
+  color: var(--clr-primary);
+  line-height: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ... (rest of your styles) ... */
+
+/* Mobile-first styles (default styles are for small screens) */
+.content, .content1 {
+  width: 100%; /* Take up full width on mobile */
+}
+
+/* Larger screen adjustments */
+@media (min-width: 768px) {
+  .content, .content1 {
+    width: calc((100% - 2 * 16px) / 3); /* Return to 3-column layout */
+  }
+
+  .featured {
+    width: calc((100% - 30px) / 3 * 2 + 16px); /* Featured items span two columns */
+  }
+}
+
+
+
+
+.featured {
+  width: calc(2 * ((1136px - 2 * 30px) / 3) + 30px); /* Adjusted for the new gap */
+  max-width: calc(2 * ((1136px - 2 * 30px) / 3) + 30px); /* Ensure it doesn't exceed this width */
+}
+
+
+
+
+
+
+
+
+
+
+ /* Content Zoom In Effect while hovering */
+
+.content1 {
+  position: relative; 
+  overflow: hidden; 
+}
+
+.mask-group {
+  transition: transform 0.5s ease; 
+}
+
+.content1:hover .mask-group {
+  transform: scale(1.1); 
+}
+
+
+
+/*Body font*/
+.content .text-wrapper-3 {
+  position: relative;
+  align-self: stretch;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+}
+
+/*body bold font*/
+.content .text-wrapper-33 {
+  font-family: 'Clash Display', sans-serif;
+font-weight: 500; /* This will make the text bold */
+/* Include the rest of your existing styles here */
+}
+
+
+
+
+
+
+
+
+
+
+/* Arrow */
+
+.arrow-top-right {
+  position: absolute;
+  width: 47px;
+  height: 47px;
+  bottom: 2em; /* Distance from the bottom edge, equal to the padding */
+  left: 2em;  /* Distance from the left edge, equal to the padding */
+  top: auto;  /* Reset the top value so it doesn't interfere */
+    z-index: 2;  /* Ensures the arrow is above the mask group image */
+}
+
+
+.learn-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 32px;
+  position: relative;
+  border-radius: 99px;
+  overflow: hidden;
+  border: 0.8px solid;
+  border-color: #b4b4b4;
+  transform: rotate(-5deg); /* Added rotation */
+}
+
+.learn-more .text-wrapper {
+  position: relative;
+  width: fit-content;
+  margin-top: -0.8px;
+  font-family: "Montserrat-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+
+
+
+
+
+
+/*timeline frame to give spacing*/
+.content .frame3 {
+    height: 438px;
+    justify-content: space-between;
+    align-self: stretch;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+/*timeline years spacing */
+.content .frame-2 {
+  gap: 28px;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+/*Latest Thread to fixe height*/
+.content .div11 {
+    gap: 28px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 577px;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+/*Magic Tricks I Can Do */
+
+    .div1 {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgb(41, 41, 43) 0%, rgb(102, 102, 102) 100%);
+    }
+    .iconoir-remove-media {
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    top: 412px;
+    left: 118px;
+    border-radius: 8px;
+    }
+    .div-2 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: relative;
+    background-color: #f5f5f7;
+    border-radius: 99px;
+    overflow: hidden;
+    }
+    .skill-icons-figma {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    }
+    .frame-wrapper {
+    top: 280px;
+    left: 13px;
+    transform: rotate(27.31deg);
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    border-radius: 8px;
+    }
+    .img-wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: relative;
+    background-color: #f5f5f7;
+    border-radius: 8px;
+    }
+    .logos-adobe {
+    position: relative;
+    width: 64.67px;
+    height: 64.67px;
+    margin-top: -8.33px;
+    margin-bottom: -8.34px;
+    margin-left: -8.34px;
+    margin-right: -8.34px;
+    transform: rotate(-27.31deg);
+    }
+    .div-wrapper {
+    top: 306px;
+    left: 109px;
+    transform: rotate(44.52deg);
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    border-radius: 8px;
+    }
+    .img {
+    position: relative;
+    width: 67.88px;
+    height: 67.88px;
+    margin-top: -9.94px;
+    margin-bottom: -9.94px;
+    margin-left: -9.94px;
+    margin-right: -9.94px;
+    transform: rotate(-44.52deg);
+    }
+    .iconoir-remove-media-2 {
+    top: 397px;
+    left: 15px;
+    transform: rotate(-27.03deg);
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    border-radius: 8px;
+    }
+     .vscode-icons-file {
+    position: relative;
+    width: 64.57px;
+    height: 64.57px;
+    margin-top: -8.29px;
+    margin-bottom: -8.28px;
+    margin-left: -8.29px;
+    margin-right: -8.29px;
+    transform: rotate(27.03deg);
+    }
+    .iconoir-remove-media-3 {
+    top: 412px;
+    left: 208px;
+    position: absolute;
+    width: 88px;
+    height: 88px;
+    border-radius: 8px;
+    }
+    .canva {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    background-image: url(./img/canva-1.png);
+    background-size: cover;
+    background-position: 50% 50%;
+    }
+    .text-wrapper4 {
+    position: absolute;
+    height: 19px;
+    top: 38px;
+    left: 39px;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-weight: 500;
+    color: var(--style);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+/* Music */
+
+.music {
+  display: flex;
+  flex-direction: column;
+  height: 359px;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 37px 38px;
+  position: relative;
+  /* background-image: url(./img/spotify.png);
+  background-size: cover;
+  background-position: 50% 50%; */
+}
+
+.music .last-played {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  gap: 16px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.music .frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  position: relative;
+  align-self: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+}
+
+.music .div {
+  position: relative;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: "Inter-SemiBold", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+
+.music .play-wrapper {
+  position: relative;
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  padding: 14px;
+  background-color: #E8E8E8; /* Orange background */
+  border-radius: 99px; /* Rounded corners */
+}
+
+
+
+.music .play {
+  width: 76px; /* Set width as needed */
+  height: 76px; /* Set height as needed */
+background-color: #f5f5f7;
+border-radius: 38px;
+border: 1px solid;
+border-color: #ffffff33;
+box-shadow: 0px 4px 4px #0000001a;
+transition: transform 0.2s ease;
+}
+
+
+
+.music .play:hover {
+  animation: float 1s ease-in-out infinite; /* Apply the floating animation on hover */
+}
+
+
+
+@keyframes float {
+  0%, 100% {
+      transform: translate(0, 0);
+  }
+  25% {
+      transform: translate(-3px, -3px);
+  }
+  50% {
+      transform: translate(3px, -3px);
+  }
+  75% {
+      transform: translate(3px, 3px);
+  }
+}
+
+
+.text-wrapper-31 {
+  display: flex; /* Enables flexbox */
+  align-items: center; /* Aligns items vertically in the center */
+  gap: 8px; /* Adjust this value for space between the GIF and text */
+  color: #1ED760;
+}
+
+.spotify-gif {
+  width: 32px; /* Set the width of the GIF */
+  height: auto; /* Maintain aspect ratio of the GIF */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flex-container {
+  display: flex;
+  margin: 96px;
+  flex-direction: row;
+}
+
+.left-image-section, .left-image-section1 .left-image-section2{
+  position: relative;
+  overflow: hidden;
+  margin-right: 64px;
+  border-radius: 16px;
+  width: 100%;
+}
+
+.left-image-section {
+  height: 500px;
+}
+
+.left-image-section1 {
+  height: 641px;
+}
+
+.left-image-section2 {
+  height: 368px;
+}
+
+.image-wrapper, .image-wrapper1 {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.image-wrapper img, .image-wrapper1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.left-image-section:hover .image-wrapper, 
+.left-image-section1:hover .image-wrapper1 {
+  transform: scale(1.1);
+}
+
+.image-overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  border-radius: 16px;
+}
+
+.left-image-section:hover .image-overlay-container, 
+.left-image-section1:hover .image-overlay-container {
+  opacity: 1;
+}
+
+.overlay-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.author-name {
+  color: #ECF2FF;
+  font-size: 16px;
+  font-family: Montserrat;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.title {
+  color: #E9F0FC;
+  font-size: 40px;
+  font-family: Clash Display;
+  font-weight: 500;
+  line-height: 46px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#zoomIn, #zoomOut {
+    background: rgb(255, 255, 255);
+    width: 36px;
+    height: 36px;
+    border-radius: 18px;
+    position: absolute;
+    bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 0.2s ease 0s;
+    will-change: transform;
+    z-index: 1;
+}
+
+#zoomIn {
+    left: 10px;
+}
+
+#zoomOut {
+    right: 10px;
+}
+
+
+
+
+
+
+
+

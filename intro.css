@@ -1,0 +1,31 @@
+
+
+
+.intro-text {
+  position: relative;
+  top: -4rem;
+  overflow: visible
+}
+
+
+.container_new.flex-vert-center {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  text-align: center; /* This line centers text horizontally */
+  height: 100vh; /* This line ensures the container takes up the full viewport height */
+}
+
+
+.title-gsap.margin-bottom-custom1 {
+  opacity: 0;
+  margin-bottom: 2rem;
+  transform: scale(1.2)translateY(10vh)
+}
+
+.title-3-gsap {
+  font-size: 3vw;
+  font-weight: 500;
+  margin: 10px; /* This line removes any default margin from the paragraphs */
+}
