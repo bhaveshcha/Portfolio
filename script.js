@@ -135,6 +135,54 @@ updateSpotifyInfo();
 
 
 
+const request = require('request'); // You may need to install the 'request' package
+
+const client_id = 'd7d2615e130742fd8e3eed1f2e8d3414';
+const client_secret = 'ad5c7dbbacaa4f46ab2f75d3bdaaab73';
+const redirect_uri = 'https://bhaveshcha.github.io/Portfolio/';
+const code = 'AQB4T2s6eSvLciRJAdp8mG68CEVZ3uixRUBK8w8PQ7vwjPwLNt2ccDlBcaX0DpKP5qEVPxR7cE8uhMj7TPJRThDszumXX-USjBZtoXltl2a7Lq9ZyC9igpKPrJx_KHhKdzuFAvLbt9yuz3l5TrC1pXmSRwmmuAf8jTbhyA0_8EXsbTJR7TzmkSu-UT2H5qFoTukVXhqKBr5XXS0hTT8Q3taQRCOJtbM'; // Replace with your actual code
+
+const authOptions = {
+  url: 'https://accounts.spotify.com/api/token',
+  headers: {
+    'Authorization': 'Basic ' + (Buffer.from(client_id + ':' + client_secret).toString('base64')),
+    'Content-Type': 'application/x-www-form-urlencoded'
+  },
+  form: {
+    code: code,
+    redirect_uri: redirect_uri,
+    grant_type: 'authorization_code'
+  },
+  json: true
+};
+
+request.post(authOptions, function(error, response, body) {
+  if (!error && response.statusCode === 200) {
+    const access_token = body.access_token;
+    const refresh_token = body.refresh_token;
+    // Use the access token to access the Spotify Web API
+    // Save the refresh token for later use
+    console.log('Access Token:', access_token);
+  } else {
+    console.error('Error:', body);
+  }
+});
+const client_secret = 'ad5c7dbbacaa4f46ab2f75d3bdaaab73';
+const redirect_uri = 'https://bhaveshcha.github.io/Portfolio/';
+const code = 'AQB4T2s6eSvLciRJAdp8mG68CEVZ3uixRUBK8w8PQ7vwjPwLNt2ccDlBcaX0DpKP5qEVPxR7cE8uhMj7TPJRThDszumXX-USjBZtoXltl2a7Lq9ZyC9igpKPrJx_KHhKdzuFAvLbt9yuz3l5TrC1pXmSRwmmuAf8jTbhyA0_8EXsbTJR7TzmkSu-UT2H5qFoTukVXhqKBr5XXS0hTT8Q3taQRCOJtbM';
+
+const response = await fetch('https://accounts.spotify.com/api/token', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'Authorization': 'Basic ' + Buffer.from(client_id + ':' + client_secret).toString('base64')
+  },
+  body: `grant_type=authorization_code&code=${code}&redirect_uri=${redirect_uri}`
+});
+
+const data = await response.json();
+console.log(data);
+
 
 
 
