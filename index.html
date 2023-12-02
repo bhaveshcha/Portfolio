@@ -55,7 +55,7 @@
             <div class="cool-sites"><div class="text-wrapper-2">Cool Sites!</div></div>
             </div>
             </div>
-            <img class="group" src="img/group1.png" />
+            <img class="group" src="img/group.png" />
             </div>
             </div>
             </div>
@@ -120,7 +120,7 @@
                               <div class="content1 featured">
                                 <div class="left-image-section">
                                   <div class="image-wrapper">
-                                    <img src="/img/Rectangle 9.png" alt="Left-side Image">
+                                    <img src="/img/Rectangle_9.png" alt="Left-side Image">
                                   </div>
                                   <div class="image-overlay-container">
                                     <div class="overlay-gradient"></div>
@@ -252,13 +252,125 @@
                       
                       
 
+                      
+
+
+                      <div class="content1">
+                        <div class="left-image-section2">
+                            <div class="image-wrapper" style="overflow: hidden; border-radius: 20px; position: relative; padding-top: 56.25%;">
+                                <!-- Bing Maps Container -->
+                                <div id="bingMap" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                    
+                                <!-- Custom Zoom Controls -->
+                                <button id="zoomIn" style="display: none;">+</button>
+                                <button id="zoomOut">-</button>
+                            </div>
+                        </div> 
+                    </div>
+                    
+                    <!-- Bing Maps API and Custom Zoom Control Script -->
+                    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AvVsginkg5b3amw4KichuqjKTTPe82GfzxfjCOLy094DXJBXLK4zN0DaDyHx8q6A&callback=loadMapScenario' async defer></script>
+                    <script type='text/javascript'>
+                    var map;
+                    function loadMapScenario() {
+                        map = new Microsoft.Maps.Map('#bingMap', {
+                            center: new Microsoft.Maps.Location(29.147583, 79.512543),
+                            zoom: 12,
+                            disablePanning: true,
+                            disableZooming: true,
+                            showLocateMeButton: false,
+                            showMapTypeSelector: false,
+                            showZoomButtons: false,
+                            showScalebar: false  // Disable the scalebar
+                        });
+                    
+                        var zoomInButton = document.getElementById('zoomIn');
+                        var zoomOutButton = document.getElementById('zoomOut');
+                    
+                        zoomInButton.onclick = function() {
+                            map.setView({ zoom: map.getZoom() + 1 });
+                        };
+                    
+                        zoomOutButton.onclick = function() {
+                            map.setView({ zoom: map.getZoom() - 1 });
+                        };
+                    
+                        Microsoft.Maps.Events.addHandler(map, 'viewchangeend', function() {
+                            var zoomLevel = map.getZoom();
+                            if (zoomLevel > 1) {
+                                zoomInButton.style.display = 'block';
+                            } else {
+                                zoomInButton.style.display = 'none';
+                            }
+                        });
+                    }
+                    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="content1 featured">
+  <div class="left-image-section">
+    <div class="image-wrapper">
+      <img src="/img/Rectangle_99.png" alt="Left-side Image">
+    </div>
+    <div class="image-overlay-container">
+      <div class="overlay-gradient"></div>
+      <div class="text-overlay">
+        <div class="author-name">Oladimeji Ajegbile</div>
+        <div class="title">The Simple Creative</div>
+      </div>
+    </div>
+  </div>
+  <!-- Add additional content here if needed -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 
                       
-
+<!-- 
                       <div class="content1">
                         <div class="left-image-section2">
                           <div class="image-wrapper">
@@ -268,7 +380,7 @@
                       </div>
                       
 
-
+ -->
 
                         
 
@@ -298,120 +410,43 @@
 
 
 
-                          <div class="content flow">
-                            <div class="div11">
+
+                          <div class="content">
+                            <div class="frame3">
                             <div class="text-wrapper-3">Latest Thread</div>
                             <p class="text-wrapper">Pro yet simple tips about web design for beginners</p>
                             <p class="text-wrapper-3">
                             Lorem ipsum dolor sit amet consectetur. Purus mus lorem urna orci congue volutpat. Adipiscing mus tristique
-                            integer enim eu purus feugiat non integer. Ultricies urna aenean ac vel. Eget duis vivamus rutrum neque
-                            sagittis amet sed. Suspendisse tincidunt sit habitant diam arcu commodo. Velit vitae commodo augue ac sed
-                            aliquam ipsum.
+                            integer enim eu purus feugiat non integer. Ultricies urna aenean ac vel.
                             </p>
-                            <div class="learn-more"><div class="text-wrapper">Learn More</div></div>
                             </div>
                             </div>
 
 
 
 
+              
+                          
 
-
-
-                            
-
-
-
-
-
-
-                            <div class="content1">
-                              <div class="left-image-section1">
-                                <div class="image-wrapper1">
-                                  <img src="/img/5th.jpg" alt="Left-side Image">
-                                </div>
-                                <div class="image-overlay-container">
-                                  <div class="overlay-gradient"></div>
-                                  <div class="text-overlay">
-                                    <div class="author-name">Oladimeji Ajegbile</div>
-                                    <div class="title">Theraleaf</div>
+                              <div class="content1">
+                                <div class="frame33">
+                                <div class="frame-22">
+                                <div class="text-wrapper">Contact me</div>
+                                <div class="div">I’ll reply asap.</div>  
+                                <div class="socials">
+                                  <img class="link" src="/img/insta.svg" />
+                                  <img class="link" src="/img/in.svg" />
+                                  <img class="link" src="/img/fb.svg" />
+                                  <img class="link" src="/img/tik.svg" />
                                   </div>
                                 </div>
                               </div>
-                              <!-- Add additional content here if needed -->
-                            </div>
-
-
-
-
-
-                          
-                          
-
-
-                            <div class="content1">
-                              <div class="left-image-section2">
-                                  <div class="image-wrapper" style="overflow: hidden; border-radius: 20px; position: relative; padding-top: 56.25%;">
-                                      <!-- Bing Maps Container -->
-                                      <div id="bingMap" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
-                          
-                                      <!-- Custom Zoom Controls -->
-                                      <button id="zoomIn" style="display: none;">+</button>
-                                      <button id="zoomOut">-</button>
-                                  </div>
-                              </div> 
-                          </div>
-                          
-                          <!-- Bing Maps API and Custom Zoom Control Script -->
-                          <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AvVsginkg5b3amw4KichuqjKTTPe82GfzxfjCOLy094DXJBXLK4zN0DaDyHx8q6A&callback=loadMapScenario' async defer></script>
-                          <script type='text/javascript'>
-                          var map;
-                          function loadMapScenario() {
-                              map = new Microsoft.Maps.Map('#bingMap', {
-                                  center: new Microsoft.Maps.Location(29.147583, 79.512543),
-                                  zoom: 12,
-                                  disablePanning: true,
-                                  disableZooming: true,
-                                  showLocateMeButton: false,
-                                  showMapTypeSelector: false,
-                                  showZoomButtons: false,
-                                  showScalebar: false  // Disable the scalebar
-                              });
-                          
-                              var zoomInButton = document.getElementById('zoomIn');
-                              var zoomOutButton = document.getElementById('zoomOut');
-                          
-                              zoomInButton.onclick = function() {
-                                  map.setView({ zoom: map.getZoom() + 1 });
-                              };
-                          
-                              zoomOutButton.onclick = function() {
-                                  map.setView({ zoom: map.getZoom() - 1 });
-                              };
-                          
-                              Microsoft.Maps.Events.addHandler(map, 'viewchangeend', function() {
-                                  var zoomLevel = map.getZoom();
-                                  if (zoomLevel > 1) {
-                                      zoomInButton.style.display = 'block';
-                                  } else {
-                                      zoomInButton.style.display = 'none';
-                                  }
-                              });
-                          }
-                          </script>
+                                </div>
+                           
                           
                       
                           
-                            
-
-
-                        <div class="content1">
-                          <div class="left-image-section2">
-                            <div class="image-wrapper">
-                              <img src="./img/Frame 1686560514.png" style="width: 100%; height: 100%; border-radius: 20px;">
-                            </div>
-                          </div> 
-                        </div>
+                      
 
                       </div>
 
