@@ -802,16 +802,20 @@ transition: transform 0.2s ease;
 
 .link {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding: 17px;
+  padding: 17px; /* Padding is inside the box */
   position: relative;
   background-color: #8d8d8d1a;
-  border-radius: 9999px;
+  border-radius: 9999px; /* This will round the outer edge of the .link element */
+  height: 56px; /* Fixed height */
+  width: 56px; /* Fixed width */
+  /* No overflow: hidden; so the inner content is not clipped */
 }
 
-.link .image {
+.link .insta {
   position: relative;
   width: 22px;
   height: 22px;
+  /* No specific border-radius needed for .insta unless you want to style it differently */
 }
