@@ -200,3 +200,33 @@
       order: 1; /* Move group image below the overlap-group */
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Existing styles... */
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 600px) {
+  /* ... other responsive styles ... */
+
+
+
+  .hero-section .group {
+    margin-top: 160px; /* Add space above the image */
+  }
+
+  /* ... other responsive styles ... */
+}

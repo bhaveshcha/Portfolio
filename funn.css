@@ -660,6 +660,15 @@ transition: transform 0.2s ease;
   height: 368px;
 }
 
+
+/* Responsive styles for mobile devices */
+@media (max-width: 767px) {
+  .left-image-section, .left-image-section1 {
+    height: 450px;
+  }
+}
+
+
 .image-wrapper, .image-wrapper1 {
   width: 100%;
   height: 100%;
@@ -947,6 +956,6 @@ transition: transform 0.2s ease;
 /* Responsive adjustments for mobile screens */
 @media screen and (max-width: 480px) {
   .grid {
-    margin: 12px; /* Consistent margin for mobile screens */
+    margin: 16px; /* Consistent margin for mobile screens */
   }
 }
