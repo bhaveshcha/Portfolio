@@ -614,6 +614,9 @@ transition: transform 0.2s ease;
   height: auto; /* Maintain aspect ratio of the GIF */
 }
 
+.spotify-link {
+  text-decoration: none; /* Removes underline from links */
+}
 
 
 
@@ -738,7 +741,7 @@ transition: transform 0.2s ease;
 
 
 
-
+/* maps zoom in and out */
 
 #zoomIn, #zoomOut {
     background: rgb(255, 255, 255);
@@ -763,6 +766,9 @@ transition: transform 0.2s ease;
     right: 10px;
 }
 
+#bingMap {
+    touch-action: none; /* Disables default touch behaviors like pinch-to-zoom and pan */
+}
 
 
 
@@ -771,6 +777,11 @@ transition: transform 0.2s ease;
 
 
 
+
+
+
+
+/* Contact us Section links button */
 
 .frame33 {
   display: flex;
@@ -796,33 +807,27 @@ transition: transform 0.2s ease;
 }
 
 
-
-
-
-
 .link {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  padding: 17px; /* Padding is inside the box */
+  padding: 17px;
   position: relative;
   background-color: #8d8d8d1a;
-  border-radius: 9999px; /* This will round the outer edge of the .link element */
-  height: 56px; /* Fixed height */
-  width: 56px; /* Fixed width */
-  /* No overflow: hidden; so the inner content is not clipped */
+  border-radius: 9999px;
+  height: 56px;
+  width: 56px;
 }
 
-.link .insta {
+.link img { /* Targeting the images inside .link */
   position: relative;
   width: 22px;
   height: 22px;
-  /* No specific border-radius needed for .insta unless you want to style it differently */
+  transition: filter 0.3s; /* Smooth transition for the filter effect */
 }
 
-
-
-
+.link:hover img { /* Applying filter when .link is hovered */
+  filter: brightness(1) invert(1); /* Makes the image black */
+}
 
 
 
@@ -835,14 +840,15 @@ transition: transform 0.2s ease;
 
 #ztext button {
   padding: .8vw 1.7vw;
-  font-size: .6vw;
+  font-size: 16px;
   text-transform: capitalize;
   margin-top: 10px;
   margin-bottom: 20px;
   font-weight: 700;
   border-radius: 100px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   color: black;
+  font-family: 'Jost', sans-serif; /* Added Jost font */
 }
 
 
@@ -859,10 +865,16 @@ transition: transform 0.2s ease;
 
 
 
+/* POINTER......... */
 
-
-
-
+.left-image-section1, 
+.left-image-section1 .image-overlay-container,
+.left-image-section1 .text-overlay,
+.content1.featured .left-image-section, 
+.content1.featured .left-image-section .image-overlay-container,
+.content1.featured .left-image-section .text-overlay {
+    cursor: pointer; /* Changes cursor to hand icon on hover for specified elements */
+}
 
 
 
@@ -902,7 +914,7 @@ transition: transform 0.2s ease;
 
   .flex-container {
       flex-direction: column; /* Stack elements vertically on smaller screens */
-      margin: 48px 0; /* Adjust margin */
+
   }
 
   .div-header .heading, .div-header .p-subtitle {
@@ -932,24 +944,9 @@ transition: transform 0.2s ease;
 
 
 
-/* Base styles */
-/* ... existing styles ... */
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-  .grid, .flex-container, .content, .content1, .featured {
-      margin-left: 15px; /* Add left margin */
-      margin-right: 15px; /* Add right margin */
-  }
-
-  /* Adjust other elements as needed */
-}
-
+/* Responsive adjustments for mobile screens */
 @media screen and (max-width: 480px) {
-  .grid, .flex-container, .content, .content1, .featured {
-      margin-left: 10px; /* Slightly smaller margin for very small screens */
-      margin-right: 10px;
+  .grid {
+    margin: 12px; /* Consistent margin for mobile screens */
   }
-
-  /* Further adjustments for smaller screens */
 }
