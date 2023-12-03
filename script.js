@@ -68,22 +68,6 @@
   });
 
 
-  // Shery.imageEffect(".mask-group", {
-  //   style: 5, //Select Style
-  //   debug: true, // Debug Panel
-  //   config: {
-  //     /* Config made from debug panel */
-  //   },
-  //   preset: "./presets/wigglewobble.json",
-  // });
-
-  // Shery.imageEffect("#music", {
-  //   style: 5, //Select Style
-  //   debug: true, // Debug Panel
-  //   gooey: true,
-  // });
-
-
 
 
   document.querySelector("#ftext button")
@@ -103,34 +87,6 @@
       ease: Power4
   })
   })
-
-
-
-
-//   async function updateSpotifyInfo() {
-//     const accessToken = 'YOUR_ACCESS_TOKEN'; // Obtain this via OAuth
-
-//     try {
-//         const response = await fetch('https://api.spotify.com/v1/me/player/currently-playing', {
-//             headers: { 'Authorization': 'Bearer ' + accessToken }
-//         });
-
-//         if (response.ok) {
-//             const data = await response.json();
-//             document.getElementById('song-title').textContent = data.item.name;
-//             document.getElementById('artist-name').textContent = data.item.artists.map(artist => artist.name).join(', ');
-//             document.getElementById('spotify-song-link').href = data.item.external_urls.spotify;
-//         } else {
-//             console.log('Spotify API request failed:', response.status);
-//             // Handle errors or cases where no song is playing
-//         }
-//     } catch (error) {
-//         console.error('Error fetching Spotify data:', error);
-//     }
-// }
-
-// // Call the function to update the song info
-// updateSpotifyInfo();
 
 
 

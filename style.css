@@ -23,9 +23,11 @@ body {
 
 .text-wrapper {
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 700;
   color: #000000;
+  text-transform: capitalize; /* Added to make text in title case */
 }
+
 
 .element {
   width: 49.37px;
