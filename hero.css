@@ -51,11 +51,11 @@
   -webkit-background-clip: text !important;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
-  font-family: "Inter-ExtraBold", Helvetica;
+  /* text-fill-color: transparent; */
+  font-family: "Jost", sans-serif;
   font-weight: 800;
   color: transparent;
-  font-size: 180px;
+  font-size: 220px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
@@ -64,7 +64,7 @@
 .hero-section .text-wrapper {
   position: relative;
   width: fit-content;
-  font-family: "Inter-Bold", Helvetica;
+  font-family: "Jost", sans-serif;
   font-weight: 700;
   color: #000000;
   font-size: 20px;
@@ -107,4 +107,96 @@
   height: 829px;
   top: 0;
   left: 182px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General styles - already provided */
+
+/* ... existing styles ... */
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 600px) {
+  .hero-section {
+      max-width: 100%; /* Adjust max-width for mobile */
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* Change alignment for mobile */
+  }
+
+  .hero-section .frame {
+      width: 100%; /* Full width on mobile */
+      height: auto; /* Height auto for flexible layout */
+  }
+
+  .hero-section .overlap {
+      height: auto; /* Adjust height for mobile */
+  }
+
+  .hero-section .text {
+      top: initial;
+      bottom: 0; /* Move text to the bottom */
+  }
+
+  .hero-section .overlap-group {
+      position: relative; /* Change position for mobile */
+      top: 0; /* Adjust top position */
+      height: auto; /* Flexible height */
+      order: -1; /* Move overlap-group to the top */
+  }
+
+  @media only screen and (max-width: 600px) {
+    /* ... other responsive styles ... */
+
+    .hero-section .webdesigner {
+        font-size: 15vw; /* Use viewport width for scaling */
+        max-width: 100%; /* Ensure it doesn't exceed the screen width */
+        overflow-wrap: break-word; /* Breaks the word to prevent overflow */
+        text-align: center; /* Center the text */
+        padding: 0 20px; /* Add some padding on the sides */
+        line-height: 1.2; /* Adjust line height if needed */
+    }
+
+    /* ... other responsive styles ... */
+}
+
+
+  .hero-section .text-wrapper, .hero-section .text-wrapper-2 {
+      font-size: 16px; /* Adjust font size for readability */
+  }
+
+  .hero-section .cool-sites {
+      top: initial;
+      bottom: 40px; /* Move cool-sites below the image */
+      left: initial;
+      right: 6px; /* Adjust position */
+      transform: rotate(0deg); /* Reset rotation */
+  }
+
+  .hero-section .group {
+      position: relative; /* Change position for mobile */
+      width: 100%; /* Full width on mobile */
+      height: auto; /* Adjust height */
+      top: initial; /* Reset top */
+      left: initial; /* Reset left */
+      order: 1; /* Move group image below the overlap-group */
+  }
 }

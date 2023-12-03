@@ -45,7 +45,7 @@
     position: relative;
     width: fit-content;
     margin-top: -1px;
-    font-family: "Inter-Bold", Helvetica;
+    font-family: "Jost", sans-serif;
     font-weight: 700;
     color: #29292b;
 
@@ -244,7 +244,7 @@ h1 {
 .content .text-wrapper-3 {
   position: relative;
   align-self: stretch;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Jost", sans-serif;
   font-weight: 400;
   color: #000000;
   font-size: 16px;
@@ -254,7 +254,7 @@ h1 {
 
 /*body bold font*/
 .content .text-wrapper-33 {
-  font-family: 'Clash Display', sans-serif;
+  font-family: "Jost", sans-serif;
 font-weight: 500; /* This will make the text bold */
 /* Include the rest of your existing styles here */
 }
@@ -299,7 +299,7 @@ font-weight: 500; /* This will make the text bold */
   position: relative;
   width: fit-content;
   margin-top: -0.8px;
-  font-family: "Montserrat-Regular", Helvetica;
+  font-family: "Jost", sans-serif;
   font-weight: 400;
   color: #000000;
   font-size: 16px;
@@ -485,7 +485,7 @@ font-weight: 500; /* This will make the text bold */
     height: 19px;
     top: 38px;
     left: 39px;
-    font-family: "Montserrat-Regular", Helvetica;
+    font-family: "Jost", sans-serif;
     font-weight: 500;
     color: var(--style);
     font-size: 16px;
@@ -546,7 +546,7 @@ font-weight: 500; /* This will make the text bold */
   position: relative;
   align-self: stretch;
   margin-top: -1px;
-  font-family: "Inter-SemiBold", Helvetica;
+  font-family: "Jost", sans-serif;
   font-weight: 600;
   color: #000000;
   font-size: 40px;
@@ -720,7 +720,7 @@ transition: transform 0.2s ease;
 .title {
   color: #E9F0FC;
   font-size: 40px;
-  font-family: Clash Display;
+  font-family: "Jost", sans-serif;
   font-weight: 500;
   line-height: 46px;
 }
@@ -818,4 +818,138 @@ transition: transform 0.2s ease;
   width: 22px;
   height: 22px;
   /* No specific border-radius needed for .insta unless you want to style it differently */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ztext button {
+  padding: .8vw 1.7vw;
+  font-size: .6vw;
+  text-transform: capitalize;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  border-radius: 100px;
+  border: 1px solid black;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Base styles */
+/* ... existing styles ... */
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .grid {
+      --columns: 2; /* Reduce the number of columns on smaller screens */
+  }
+
+  .featured, .content, .content1 {
+      width: 100%; /* Full width for smaller screens */
+  }
+
+  .left-image-section, .left-image-section1, .left-image-section2 {
+      margin-right: 0; /* Remove margin for smaller screens */
+  }
+
+  .flex-container {
+      flex-direction: column; /* Stack elements vertically on smaller screens */
+      margin: 48px 0; /* Adjust margin */
+  }
+
+  .div-header .heading, .div-header .p-subtitle {
+      padding: 0 20px; /* Adjust padding */
+  }
+
+  .h1, .h2, .h3, .p {
+      font-size: smaller; /* Adjust font size */
+  }
+
+  /* Add more responsive adjustments as needed */
+}
+
+@media screen and (max-width: 480px) {
+  .grid {
+      --columns: 1; /* Only one column for very small screens */
+  }
+
+  .frame .grid > .content:last-child {
+      margin-bottom: var(--gap); /* Add back margin if needed */
+  }
+
+  /* Further reduce font sizes and adjust paddings/margins as needed */
+}
+
+
+
+
+
+/* Base styles */
+/* ... existing styles ... */
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .grid, .flex-container, .content, .content1, .featured {
+      margin-left: 15px; /* Add left margin */
+      margin-right: 15px; /* Add right margin */
+  }
+
+  /* Adjust other elements as needed */
+}
+
+@media screen and (max-width: 480px) {
+  .grid, .flex-container, .content, .content1, .featured {
+      margin-left: 10px; /* Slightly smaller margin for very small screens */
+      margin-right: 10px;
+  }
+
+  /* Further adjustments for smaller screens */
 }

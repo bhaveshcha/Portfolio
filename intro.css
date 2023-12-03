@@ -29,3 +29,45 @@
   font-weight: 500;
   margin: 10px; /* This line removes any default margin from the paragraphs */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+  .intro-text {
+      top: -2rem; /* Adjusted for smaller screens */
+  }
+
+  .container_new.flex-vert-center {
+      height: auto; /* Adjust height for smaller screens */
+  }
+
+  .title-gsap.margin-bottom-custom1 {
+      opacity: 1; /* Change opacity if needed */
+      margin-bottom: 1rem; /* Smaller margin */
+      transform: scale(1) translateY(5vh); /* Adjust transformation */
+  }
+
+  .title-3-gsap {
+      font-size: 5vw; /* Increase font size for better readability on small screens */
+      margin: 5px; /* Adjust margin */
+  }
+}
