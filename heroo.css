@@ -1,0 +1,15 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0; /* Example background color */
+  overflow: hidden; /* Prevents any overflow */
+}
+
+.hero-section video {
+  width: 100%;
+  height: auto;
+}
+
+
+
