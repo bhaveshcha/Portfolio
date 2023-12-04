@@ -13,3 +13,26 @@
 
 
 
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.desktop-video, .mobile-video {
+  width: 100%;
+  height: auto;
+}
+
+/* Hide mobile video on larger screens */
+@media (min-width: 769px) {
+  .mobile-video {
+      display: none;
+  }
+}
+
+/* Hide desktop video on smaller screens */
+@media (max-width: 768px) {
+  .desktop-video {
+      display: none;
+  }
+}
