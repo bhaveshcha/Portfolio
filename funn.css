@@ -956,6 +956,6 @@ transition: transform 0.2s ease;
 /* Responsive adjustments for mobile screens */
 @media screen and (max-width: 480px) {
   .grid {
-    margin: 16px; /* Consistent margin for mobile screens */
+    margin: 20px; /* Consistent margin for mobile screens */
   }
 }

@@ -7,9 +7,10 @@
 }
 
 .hero-section video {
-  width: 100%;
+  width: 1300px;
   height: auto;
 }
+
 
 
 
@@ -19,8 +20,9 @@
 }
 
 .desktop-video, .mobile-video {
-  width: 100%;
+  width: 1440px;
   height: auto;
+  object-fit: cover;
 }
 
 /* Hide mobile video on larger screens */
