@@ -7,12 +7,9 @@
 }
 
 .hero-section video {
-  width: 1180px;
+  width: 100%; /* Set width to 100% for responsiveness */
   height: auto;
 }
-
-
-
 
 .hero-section {
   position: relative;
