@@ -141,3 +141,72 @@ function populateUI(profile) {
 
 
 
+
+
+
+// Function to update the weather information
+function updateWeather(data) {
+    // Extract relevant weather information
+    const city = data.location.name;
+    const temperature = data.current.temperature;
+    const time = data.current.observation_time;
+    const weatherIcon = data.current.weather_icons[0];
+  
+    // Update the HTML with the new weather information
+    document.getElementById('weather-info').innerHTML = `
+      <div class="location_col">
+        <div class="font-s-small">${city}</div>
+      </div>
+      <div class="location_col">
+        <div id="temperature" class="font-s-small">${temperature}°C</div>
+      </div>
+      <div class="location_col">
+        <div id="time" class="font-s-small">${time}</div>
+      </div>
+      <div class="location_col weather">
+        <img src="${weatherIcon}" loading="lazy" id="weather-icon" alt="" class="weather_icon">
+      </div>
+    `;
+  }
+  
+  // Function to fetch weather data from the API
+// Function to fetch weather data from the API
+async function getWeather() {
+    try {
+      // Replace 'YOUR_ACCESS_KEY' with your actual Weatherstack API key
+      const accessKey = 'c1597aa01d177595f2fca9094bfb9082';
+      const locationQuery = 'New York';
+      const units = 'm';
+      const language = 'en'; // Use a valid 2-letter ISO language code
+  
+      const response = await fetch(`http://api.weatherstack.com/current?access_key=${accessKey}&query=${locationQuery}&units=${units}&language=${language}`);
+      const data = await response.json();
+  
+      // Update the HTML with the new weather information
+      updateWeather(data);
+  
+    } catch (error) {
+      console.error('Error fetching weather data:', error);
+    }
+  }
+  
+  
+  // Initial update with the provided data
+  getWeather();
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
