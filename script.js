@@ -144,69 +144,147 @@ function populateUI(profile) {
 
 
 
-// Function to update the weather information
-function updateWeather(data) {
-    // Extract relevant weather information
-    const city = data.location.name;
-    const temperature = data.current.temperature;
-    const time = data.current.observation_time;
-    const weatherIcon = data.current.weather_icons[0];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  document.getElementById('copyButton').addEventListener('click', function() {
+    // Get the email address
+    var email = 'bhaveshchaubey37@gmail.com';
   
-    // Update the HTML with the new weather information
-    document.getElementById('weather-info').innerHTML = `
-      <div class="location_col">
-        <div class="font-s-small">${city}</div>
-      </div>
-      <div class="location_col">
-        <div id="temperature" class="font-s-small">${temperature}°C</div>
-      </div>
-      <div class="location_col">
-        <div id="time" class="font-s-small">${time}</div>
-      </div>
-      <div class="location_col weather">
-        <img src="${weatherIcon}" loading="lazy" id="weather-icon" alt="" class="weather_icon">
-      </div>
-    `;
+    // Create a temporary input element
+    var tempInput = document.createElement('input');
+    tempInput.value = email;
+  
+    // Append the input element to the document
+    document.body.appendChild(tempInput);
+  
+    // Select and copy the email address
+    tempInput.select();
+    document.execCommand('copy');
+  
+    // Remove the temporary input element
+    document.body.removeChild(tempInput);
+  
+    // Change the button text to "Copied"
+    var btnCopied = document.querySelector('.btn_copied');
+    btnCopied.textContent = 'Email Copied';
+  
+    // Optional: Reset the button text after a certain delay (e.g., 2 seconds)
+    setTimeout(function() {
+      btnCopied.textContent = 'Copy Email';
+    }, 500);
+  });
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  function initMarqueeAnimation() {
+    const animationConfig = {
+        duration: 5,
+        x: "-125%",
+        repeat: -1,
+        ease: "linear"
+    };
+
+    const marqueeContainer = document.querySelector(".js-btn-loop");
+    gsap.to(marqueeContainer, {
+        ...animationConfig
+    });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Other code ...
+
+    // Call the function to initialize marquee animation
+    initMarqueeAnimation();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// Function to update Uttarakhand time
+function updateUttarakhandTime() {
+  const options = {
+      hour: "numeric",
+      minute: "numeric",
+      hour12: true,
+      timeZone: "Asia/Kolkata", // Updated timeZone for Uttarakhand
+  };
+  const timeString = new Date().toLocaleString("en-US", options);
+  document.getElementById("time").textContent = timeString;
+}
+
+// Function to get weather information for Uttarakhand
+function getUttarakhandWeather() {
+  const cityName = "Dehradun"; // City in Uttarakhand
+  const apiKey = "159fee27b0d5c9f3b20d5c9d6d3d511b";
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
+
+  fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+          const temperature = (data.main.temp - 273.15).toFixed(1);
+          document.getElementById("temperature").textContent = `${temperature}\xb0C`;
+          document.getElementById("weather-icon").src = getWeatherIcon(data.weather[0].main);
+      })
+      .catch((error) => {
+          console.error("Error fetching weather data:", error);
+          document.getElementById("temperature").textContent = "Temperature data unavailable";
+      });
+}
+
+// Function to get weather icon based on weather condition
+function getWeatherIcon(weatherCondition) {
+  switch (weatherCondition) {
+      case "Clear":
+      default:
+          return "https://res.cloudinary.com/fazurrehman/image/upload/v1697663904/weather-icon/clear.svg";
+      case "Clouds":
+          return "https://res.cloudinary.com/fazurrehman/image/upload/v1697663904/weather-icon/clouds.svg";
+      case "Rain":
+          return "https://res.cloudinary.com/fazurrehman/image/upload/v1697663905/weather-icon/rain.svg";
+      case "Snow":
+          return "https://res.cloudinary.com/fazurrehman/image/upload/v1697663904/weather-icon/snow.svg";
   }
-  
-  // Function to fetch weather data from the API
-// Function to fetch weather data from the API
-async function getWeather() {
-    try {
-      // Replace 'YOUR_ACCESS_KEY' with your actual Weatherstack API key
-      const accessKey = 'c1597aa01d177595f2fca9094bfb9082';
-      const locationQuery = 'New York';
-      const units = 'm';
-      const language = 'en'; // Use a valid 2-letter ISO language code
-  
-      const response = await fetch(`http://api.weatherstack.com/current?access_key=${accessKey}&query=${locationQuery}&units=${units}&language=${language}`);
-      const data = await response.json();
-  
-      // Update the HTML with the new weather information
-      updateWeather(data);
-  
-    } catch (error) {
-      console.error('Error fetching weather data:', error);
-    }
-  }
-  
-  
-  // Initial update with the provided data
-  getWeather();
-  
+}
 
+// Invoke the functions for Uttarakhand
+updateUttarakhandTime();
+getUttarakhandWeather();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Set intervals for updating time and weather
+setInterval(updateUttarakhandTime, 1000);
+setInterval(getUttarakhandWeather, 600000);
