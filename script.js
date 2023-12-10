@@ -288,3 +288,41 @@ getUttarakhandWeather();
 // Set intervals for updating time and weather
 setInterval(updateUttarakhandTime, 1000);
 setInterval(getUttarakhandWeather, 600000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

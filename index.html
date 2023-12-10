@@ -10,6 +10,16 @@
         <link rel="stylesheet" href="fun_stuff.css" />
         <link rel="stylesheet" href="funn.css" />
         <link rel="stylesheet" href="future.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- For GSAP and Draggable -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
+
+<!-- For Interact.js -->
+<script src="https://cdn.jsdelivr.net/npm/interactjs@1.10.9/dist/interact.min.js"></script>
+
+        
 
         <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
 
@@ -210,37 +220,212 @@
                         
 
 
-                          
 
 
                               <div class="content1">
-                                <div class="div1">
-                                    <p class="text-wrapper4">Magic Tricks I Can Do.</p>
-                                    <div class="iconoir-remove-media">
-                                        <div class="div-2">
-                                            <img class="skill-icons-figma" src="img/iconoir_remove-media-image.svg" />
+
+                                
+                                   
+                                    <div class="skillsbox">
+                                        <!-- Skills Box Title -->
+                                        <div class="skillsboxtitle">Skills</div>
+                                
+                                        
+
+
+                                        <!-- Icons -->
+                                        <div class="skillsboxlinkwrap">
+                                            <div class="frame01">
+                                            <!-- Product Design Icon -->
+                                            <a id="linkProductDesign" href="#" class="skillsboxlink">
+                                                <img src="img/canva.svg" alt="Product Design">
+                                            </a>
+                                            <!-- Brand Works Icon -->
+                                            <a id="linkBrandWorks" href="#" class="skillsboxlink">
+                                                <img src="img/ph.svg" alt="Brand Works">
+                                            </a>
+                                            <!-- Creative Directing Icon -->
+                                            <a id="linkCreativeDirecting" href="#" class="skillsboxlink">
+                                                <img src="img/sk.svg" alt="Creative Directing">
+                                            </a>
+                                            <!-- Mentoring Icon -->
+                                            <a id="linkMentoring" href="#" class="skillsboxlink">
+                                                <img src="img/figma.svg" alt="Mentoring">
+                                            </a>
                                         </div>
-                                    </div>
-                                    <div class="frame-wrapper">
-                                        <div class="img-wrapper">
-                                            <img class="logos-adobe" src="img/logos_adobe-illustrator.svg" />
                                         </div>
-                                    </div>
-                                    <div class="div-wrapper">
-                                        <div class="img-wrapper">
-                                            <img class="img" src="img/logos_adobe-photoshop.svg" />
+
+
+                                    
+                                    
+                                        <!-- Content Boxes -->
+                                        <!-- Product Design Content -->
+                                        <div id="contentProductDesign" class="skillboxnewcontent">
+                                            <img src="img/canva.svg" alt="" class="skillboxiconnew">
+                                            <div class="skillboxtitlenew"><strong>Product Design</strong></div>
+                                            <p class="skillboxtextnew">Creating exciting products is my jam! Years of experience in the field and the know-how I built in years adds to the fun as a professional.</p>
+                                            <div class="back-icon">
+                                                <!-- Reference your local SVG file -->
+                                                <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
+                                            </div>
+                                            
                                         </div>
-                                    </div>
-                                    <div class="iconoir-remove-media-2">
-                                        <div class="img-wrapper">
-                                            <img class="vscode-icons-file" src="img/vscode-icons_file-type-sketch.svg" />
+                                        <!-- Brand Works Content -->
+                                        <div id="contentBrandWorks" class="skillboxnewcontent">
+                                            <img src="img/ph.svg" alt="" class="skillboxiconnew">
+                                            <div class="skillboxtitlenew"><strong>Brand Works</strong></div>
+                                            <p class="skillboxtextnew">What does your brand represent? How are we going to deliver your message together? Branding will be our answer.</p>
+                                            <div class="back-icon">
+                                                <!-- Reference your local SVG file -->
+                                                <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="iconoir-remove-media-3">
-                                        <div class="img-wrapper">
-                                            <img class="img" src="img/logos_adobe-photoshop.svg" />
+                                        <!-- Creative Directing Content -->
+                                        <div id="contentCreativeDirecting" class="skillboxnewcontent">
+                                            <img src="img/sk.svg" alt="" class="skillboxiconnew">
+                                            <div class="skillboxtitlenew"><strong>Creative Directing</strong></div>
+                                            <p class="skillboxtextnew">Making high-level creative decisions that lead to amazing product assets and designs? Now we’re talking!</p>
+                                            <div class="back-icon">
+                                                <!-- Reference your local SVG file -->
+                                                <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
+                                            </div>
+                                            
                                         </div>
+                                        <!-- Mentoring Content -->
+                                        <div id="contentMentoring" class="skillboxnewcontent">
+                                            <img src="img/figma.svg" alt="" class="skillboxiconnew">
+                                            <div class="skillboxtitlenew"><strong>Mentoring</strong></div>
+                                            <p class="skillboxtextnew">You can reach out to me to get consultancy and mentoring on either building your idea from scratch, or making it even better.</p>
+                                            <div class="back-icon">
+                                                <!-- Reference your local SVG file -->
+                                                <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
+                                            </div>
+
                                     </div>
+                                
+                                    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    addClickListener('linkProductDesign', 'contentProductDesign');
+    addClickListener('linkBrandWorks', 'contentBrandWorks');
+    addClickListener('linkCreativeDirecting', 'contentCreativeDirecting');
+    addClickListener('linkMentoring', 'contentMentoring');
+});
+
+function addClickListener(linkId, contentId) {
+    var linkElement = document.getElementById(linkId);
+    if (linkElement) {
+        linkElement.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Toggle 'selected' class for this icon
+            this.classList.toggle('selected');
+
+            showContent(contentId);
+        });
+    }
+}
+
+// ... rest of your existing code ...
+
+
+
+function applyStyle(element, isInitial) {
+    if (isInitial) {
+        element.style = "will-change: transform; transform: translate3d(2.04px, -8.459px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;";
+    } else {
+        element.style = "will-change: transform; transform: translate3d(10.852px, 9.994px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;";
+    }
+}
+
+// ... rest of your existing code ...
+
+
+function showContent(contentId) {
+    // Hide all content boxes and reset their state
+    var allContents = document.querySelectorAll('.skillboxnewcontent');
+    for (var i = 0; i < allContents.length; i++) {
+        allContents[i].style.display = 'flex';
+        allContents[i].classList.remove('show');
+    }
+
+    // Display the clicked content with animation
+    var content = document.getElementById(contentId);
+    if (content) {
+        content.style.display = 'flex';
+        setTimeout(function() {
+            content.classList.add('show');
+        }, 10); // Timeout ensures the display: block is applied before adding the class for animation
+    }
+
+    // Show the back icon
+    var backIcon = document.querySelector('.back-icon');
+    if (backIcon) {
+        backIcon.style.display = 'block';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    // ... existing code for skill icons ...
+
+    var backIcon = document.querySelector('.back-icon');
+    if (backIcon) {
+        backIcon.addEventListener('click', function() {
+            // Hide the content1 div
+            document.querySelector('.content1').style.display = 'flex';
+
+            // Hide the back icon itself
+            backIcon.style.display = 'flex';
+        });
+    }
+});
+
+
+
+    // Initialize back icon listeners
+    var backIcons = document.querySelectorAll('.back-icon');
+    backIcons.forEach(function(backIcon) {
+        backIcon.addEventListener('click', function() {
+            // Find the parent .skillboxnewcontent and hide it
+            var content = this.closest('.skillboxnewcontent');
+            if (content) {
+                content.classList.remove('show');
+                setTimeout(function() {
+                    content.style.display = 'flex';
+                }, 500); // Wait for the animation to finish
+            }
+        });
+    });
+
+function addClickListener(linkId, contentId) {
+    var linkElement = document.getElementById(linkId);
+    if (linkElement) {
+        linkElement.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            // Hide all content boxes and reset their state
+            var allContents = document.querySelectorAll('.skillboxnewcontent');
+            for (var i = 0; i < allContents.length; i++) {
+                allContents[i].style.display = 'flex';
+                allContents[i].classList.remove('show');
+            }
+
+            // Display the clicked content with animation
+            var content = document.getElementById(contentId);
+            if (content) {
+                content.style.display = 'flex';
+                setTimeout(function() {
+                    content.classList.add('show');
+                }, 10);
+            }
+        });
+    }
+}
+
+
+
+                                    </script>
+                                    
+
                                 </div>
                             </div>
                             
@@ -549,6 +734,22 @@
 <script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
 
 </div>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
 
 
     </body>
