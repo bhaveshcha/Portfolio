@@ -235,10 +235,14 @@
 
                                         <!-- Icons -->
                                         <div class="skillsboxlinkwrap">
-                                            <div class="frame01">
+                                            
                                             <!-- Product Design Icon -->
                                             <a id="linkProductDesign" href="#" class="skillsboxlink">
                                                 <img src="img/canva.svg" alt="Product Design">
+                                            </a>
+                                            <!-- Product Desig Icon -->
+                                            <a id="linkProductDesig" href="#" class="skillsboxlink">
+                                                <img src="img/ai.svg" alt="Product Desig">
                                             </a>
                                             <!-- Brand Works Icon -->
                                             <a id="linkBrandWorks" href="#" class="skillsboxlink">
@@ -253,7 +257,7 @@
                                                 <img src="img/figma.svg" alt="Mentoring">
                                             </a>
                                         </div>
-                                        </div>
+                                        
 
 
                                     
@@ -268,7 +272,16 @@
                                                 <!-- Reference your local SVG file -->
                                                 <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
                                             </div>
+                                        </div>
                                             
+                                            <div id="contentProductDesig" class="skillboxnewcontent">
+                                                <img src="img/ai.svg" alt="" class="skillboxiconnew">
+                                                <div class="skillboxtitlenew"><strong>Product Desig</strong></div>
+                                                <p class="skillboxtextnew">Creating exciting products is my jam! Years of experience in the field and the know-how I built in years adds to the fun as a professional.</p>
+                                                <div class="back-icon">
+                                                    <!-- Reference your local SVG file -->
+                                                    <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
+                                                </div>
                                         </div>
                                         <!-- Brand Works Content -->
                                         <div id="contentBrandWorks" class="skillboxnewcontent">
@@ -306,9 +319,12 @@
                                     <script>
 document.addEventListener('DOMContentLoaded', function () {
     addClickListener('linkProductDesign', 'contentProductDesign');
+    addClickListener('linkProductDesig', 'contentProductDesig');
     addClickListener('linkBrandWorks', 'contentBrandWorks');
     addClickListener('linkCreativeDirecting', 'contentCreativeDirecting');
     addClickListener('linkMentoring', 'contentMentoring');
+ 
+
 });
 
 function addClickListener(linkId, contentId) {
