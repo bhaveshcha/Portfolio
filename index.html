@@ -12,6 +12,10 @@
         <link rel="stylesheet" href="future.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+
+
 <!-- For GSAP and Draggable -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/Draggable.min.js"></script>
@@ -437,6 +441,29 @@ function addClickListener(linkId, contentId) {
     }
 }
 
+document.querySelectorAll('.skillsboxlink').forEach(function(icon) {
+    icon.addEventListener('mousemove', function(event) {
+        const bounds = this.getBoundingClientRect();
+        const centerX = bounds.left + bounds.width / 2;
+        const centerY = bounds.top + bounds.height / 2;
+        const deltaX = event.clientX - centerX;
+        const deltaY = event.clientY - centerY;
+
+        // Adjust the intensity of the magnet effect here
+        const intensity = 0.05; // Lower this value if the effect is too strong
+
+        const translateX = deltaX * intensity;
+        const translateY = deltaY * intensity;
+
+        // Apply a limit to the translation to prevent the icon from moving too far
+        const maxTranslation = 10; // Maximum translation in pixels
+        this.style.transform = `translate(${Math.min(translateX, maxTranslation)}px, ${Math.min(translateY, maxTranslation)}px) scale(1.05)`;
+    });
+
+    icon.addEventListener('mouseout', function() {
+        this.style.transform = 'translate(0, 0) scale(1)';
+    });
+});
 
 
                                     </script>
@@ -631,6 +658,7 @@ function addClickListener(linkId, contentId) {
                             </div>
                           </div>
                           <!-- Add additional content here if needed -->
+                          
                         </div>
 
 
@@ -649,7 +677,23 @@ function addClickListener(linkId, contentId) {
                             integer enim eu purus feugiat non integer.
                             </p>
                             <div id="ztext">
-                            <button>Find out more</button>
+                            <!-- <button>Find out more</button> -->
+                           
+                            <a href="#" class="btn btn-cta btn-nav-cta-secondary">
+                                <div class="btn-cta-title">
+                                    <div>Find out more</div>
+                                </div>
+                                <div class="btn-cta-bg">
+                                    <div class="btn-cta-bg-hover cta-bg-secondary"></div>
+                                </div>
+                                <div class="btn-cta-text-hover">
+                                    <div class="text_white font-s-p">Find out more</div>
+                                </div>
+                            </a>
+                            
+                              
+                            
+
                             </div>
                           </div>
                         </div>
