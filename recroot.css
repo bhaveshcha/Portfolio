@@ -1,0 +1,107 @@
+body {
+  background-color: rgb(247, 242, 242); /* Set background color for the whole page */
+}
+
+/* ... other styles ... */
+
+
+
+
+.containerframe {
+  position: absolute;
+  top: 120px;
+  width: 100%;
+  will-change: transform, opacity;
+  transition: all 0.3s ease-out 0s;
+}
+
+.title1 {
+  color: #000000;
+  font-size: 48px;
+  font-family: "Jost", sans-serif;
+  font-weight: 700;
+  line-height: 46px;
+  margin-bottom: 8px;
+}
+
+.closebutton {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  top: calc(37px);
+  left: calc(50% - 23px);
+  border-radius: 23px;
+  border: none;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  background: rgb(237, 233, 233);
+}
+
+
+.ProjectWrapper__Container-sc-5qu3lz-0 {
+  position: relative;
+  max-width: 1136px;
+  margin: 0 auto; /* Centers the container */
+
+}
+
+.ProjectWrapper__CloseButton-sc-5qu3lz-3 {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  /* Additional styles for the button */
+}
+
+.content-flex {
+  display: flex;
+  justify-content: space-between;
+  gap: 96px; /* Adds space between flex items */
+}
+
+.content-flex .left-content .text-wrapper{
+  margin-bottom: 16px;
+}
+
+
+
+.left-content, .right-content {
+  flex: 1;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+}
+
+.left-content {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.right-content {
+  /* Styles for the right content */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adds 32px space between elements inside right-content */
+}
+/* Additional CSS for other elements as needed */
+
+
+
+.hbwHVR {
+  height: 48px;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px 16px;
+  border-radius: 19px;
+  letter-spacing: 0.25px;
+  font-size: 14px;
+  margin-right: 8px;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s ease-out 0s;
+  background: rgb(237, 233, 233);
+  color: rgb(13, 17, 23);
+}

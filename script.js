@@ -305,9 +305,35 @@ setInterval(getUttarakhandWeather, 600000);
 
 
 
-
-
-
+document.addEventListener("DOMContentLoaded", function() {
+    var cursor = document.getElementById('viewMoreCursor');
+    var content = document.querySelector('.content1');
+  
+    // Function to move the cursor
+    function moveCursor(e) {
+      gsap.to(cursor, {
+        x: e.clientX,
+        y: e.clientY,
+        duration: 0.3,
+        ease: 'Power3.easeOut'
+      });
+    }
+  
+    // Show and animate cursor on hover
+    content.addEventListener('mouseenter', function(e) {
+      gsap.to(cursor, { scale: 1, autoAlpha: 1 });
+      moveCursor(e);
+    });
+  
+    // Hide cursor on mouse leave
+    content.addEventListener('mouseleave', function() {
+      gsap.to(cursor, { scale: 0.5, autoAlpha: 0 });
+    });
+  
+    // Move cursor on mouse move
+    content.addEventListener('mousemove', moveCursor);
+  });
+  
 
 
 

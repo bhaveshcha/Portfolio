@@ -396,3 +396,94 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+                  .btn.btn-cta.btn-nav-cta-secondary {
+                    width: 150px; /* Specific width for the button */
+                    height: 50px; /* Specific height for the button */
+                    line-height: 50px; /* Align text vertically */
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    overflow: hidden;
+                    position: relative;
+                    text-decoration: none !important; /* Forcefully remove underline */
+                    color: rgb(255, 255, 255); /* Set text color to black */
+                    background-color: transparent; /* Optional: Set background color if needed */
+                    border: 1px solid black; /* Optional: Set border color if needed */
+                  }
+                  
+                  /* Other styles for hover effects, text, and background can be similar to the primary button */
+                  
+
+/* Other styles for hover effects, text, and background can be similar to the primary button */
+
+
+.btn-cta-title-secondary {
+  display: inline-block;
+  color: black; /* Set font color to black */
+}
+
+.btn-cta-title > *,
+.btn-cta-title > a, /* Targeting anchor tags specifically */
+.btn-cta-title > a:hover, /* Targeting hover state of anchor tags */
+.btn-cta-title > a:visited { /* Targeting visited state of anchor tags */
+  position: relative;
+  display: block;
+  z-index: 2;
+  transition-duration: 0.4s;
+  white-space: nowrap; /* Keep text in a straight line */
+}
+
+
+
+.btn-cta-text-hover-secondary {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  overflow: hidden;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: inherit;
+  transform: translateY(101%);
+  transition-duration: 0.4s;
+}
+
+.btn_secondary-text {
+  padding-left: 1rem;
+  line-height: 38px;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Hover Effects for Secondary Button */
+.btn-nav-cta-secondary:hover .btn-cta-bg-hover {
+  border-radius: 0;
+  transform: translateY(0);
+  transition-duration: 0.5s, 0.8s;
+}
+
+.btn-nav-cta-secondary:hover .btn-cta-title-secondary > * {
+  transform: translateY(-201%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0, 1), border-radius 0.4s cubic-bezier(0.4, 0, 0, 1), opacity 0.4s cubic-bezier(0.4, 0, 0, 1);
+}
+
+.btn-nav-cta-secondary:hover .btn-cta-text-hover-secondary {
+  transform: translateY(0);
+  opacity: 1;
+  transition-duration: 0.3s;
+}
