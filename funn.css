@@ -497,20 +497,23 @@ font-weight: 500; /* This will make the text bold */
 
 
 
+    #matter-js-container {
+      width: 800px; /* or 100% for full width */
+      height: 600px;
+      margin: auto; /* for centering if needed */
+      border: 1px solid #ccc; /* optional border */
+  }
+  
 
 
-
-
-/* skillssssss */
-
-
+/* 
+    skillss */
 
     .skillsbox {
       height: 500px;
       background-color: #3c3c3c;
-
       flex-direction: column;
-      display: flex;
+      /* display: flex; */
       position: relative;
       overflow: hidden;
     }
@@ -524,136 +527,6 @@ font-weight: 500; /* This will make the text bold */
       line-height: 1.6em;
     }
     
-
-.skillsbox .skillboxnewcontent {
-  flex-direction: column; /* Aligns children vertically */
-  gap: 20px; /* Spacing between each child element */
-  align-items: left; /* Horizontally centers the content, remove if not needed */
-  justify-content: start; /* Aligns content to the start, adjust as needed */
-  /* Other styles as required */
-  position: absolute;
-  top: 0;
-  left: 0; /* Align to the left */
-  transform: scale(0) translate(0, 100%); /* Start scaled down and at the bottom */
-  transform-origin: bottom left; /* Transform from bottom left */
-  background-color: #f5f5f7;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  width: 100%;
-  height: 100%;
-  transition: transform 0.5s ease; /* Smooth transition for transform */
-  /* Add more styles as needed */
-}
-
-
-
-.skillboxnewcontent.show {
-  transform: scale(1) translate(0, 0);
-}
-
-
-.skillboxiconnew {
-  width: 96px;  /* Set the width to 96 pixels */
-  height: 96px; /* Set the height to 96 pixels */
-  /* Add any additional styling as needed */
-}
-
-
-
-
-.back-icon {
-  position: absolute;
-  top: 10px; /* Adjust as needed */
-  right: 10px; /* Adjust as needed */
-  cursor: pointer; /* Optional, to indicate it's clickable */
-  /* ... other styles ... */
-}
-
-
-
-.skillsbox {
-    position: relative; /* This should already be set */
-    /* Other styles... */
-}
-
-.skillsboxlinkwrap {
-    position: absolute;
-    bottom: 47%; /* Align to the bottom */
-    width: 100%; /* Assuming you want it to span the entire width */
-    /* Add any additional styling as needed */
-}
-
-
-.skillsboxlinkwrap #linkProductDesign img {
-  position: absolute;
-  width: 88px;
-  height: 88px;
-  top: 147px;
-  left: 210px; /* Adjusted for the Product Design icon */
-  border-radius: 8px;
-}
-
-.skillsboxlinkwrap #linkProductDesig img {
-  position: absolute;
-  width: 88px;
-  height: 88px;
-  top: 15px;
-  left: 15px; /* Adjusted for the Product Desig icon */
-  border-radius: 8px;
-  transform: rotate(27.31deg);
-}
-
-.skillsboxlinkwrap  #linkBrandWorks img {
-  position: absolute;
-  width: 88px;
-  height: 88px;
-  top: 41px;
-  left: 111px; /* Adjusted for the Brand Works icon */
-  border-radius: 8px;
-  transform: rotate(44.52deg);
-}
-
-.skillsboxlinkwrap  #linkCreativeDirecting img {
-  position: absolute;
-  width: 88px;
-  height: 88px;
-  top: 132px;
-  left: 17px; /* Adjusted for the Creative Directing icon */
-  border-radius: 8px;
-  transform: rotate(-27.03deg);
-}
-
-.skillsboxlinkwrap #linkMentoring img {
-  position: absolute;
-  width: 88px;
-  height: 88px;
-  top: 147px;
-  left: 120px; /* Adjusted for the Mentoring icon */
-  border-radius: 8px;
-}
-
-
-
-
-
-.skillsboxlink {
-  transition: transform 0.3s ease; /* Smooth transition for the magnet effect */
-  /* Rest of your styles */
-}
-
-/* Optional: Slight scale up on hover as a fallback */
-.skillsboxlink:hover {
-  transform: scale(1.05);
-}
-
-
-
-
-
-
-
-
 
 
 
@@ -677,9 +550,9 @@ font-weight: 500; /* This will make the text bold */
   gap: 60px;
   padding: 37px 38px;
   position: relative;
-  /* background-image: url(./img/spotify.png);
+  background-image: url(./img/spotify.png);
   background-size: cover;
-  background-position: 50% 50%; */
+  background-position: 50% 50%;
 }
 
 .music .last-played {
@@ -1039,14 +912,14 @@ transition: transform 0.2s ease;
 
 /* POINTER......... */
 
-.left-image-section1, 
+/* .left-image-section1, 
 .left-image-section1 .image-overlay-container,
 .left-image-section1 .text-overlay,
 .content1.featured .left-image-section, 
 .content1.featured .left-image-section .image-overlay-container,
 .content1.featured .left-image-section .text-overlay {
-    cursor: pointer; /* Changes cursor to hand icon on hover for specified elements */
-}
+    cursor: pointer; 
+} */
 
 
 
@@ -1143,19 +1016,6 @@ transition: transform 0.2s ease;
 
 
 
-
-
-
-
-#viewMoreCursor {
-  position: absolute;
-  pointer-events: none;
-  z-index: 1000;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: opacity 0.3s, transform 0.3s;
-  /* Add more styling as needed */
-}
 
 
 

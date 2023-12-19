@@ -10,10 +10,27 @@
         <link rel="stylesheet" href="fun_stuff.css" />
         <link rel="stylesheet" href="funn.css" />
         <link rel="stylesheet" href="future.css" />
+        <!-- <link rel="stylesheet" href="matter.js" /> -->
+        <script src="matter.js" type="module"></script>
+
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 
+
+<!-- mouse follower -->
+
+        <link rel="stylesheet" href="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.css">
+
+        <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+        <script src="https://unpkg.com/mouse-follower@1/dist/mouse-follower.min.js"></script>
+
+<!-- ................. -->
 
 
 <!-- For GSAP and Draggable -->
@@ -42,7 +59,33 @@
 
         <script src="script.js" type="module"></script>
 
+<!-- --------------------------- -->
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .skillsbox {
+        width: 368px; /* Set the width of the skillsbox */
+        height: 500px; /* Set the height of the skillsbox */
+        border: 1px solid #ddd; /* Optional: Adds a border to the skillsbox */
+        position: relative;
+        overflow: hidden; /* Ensures the canvas does not overflow the container */
+    }
+
+</style>
+
+
+<!-- -------------------------- -->
+        
     </head>
+
+
     <body>
 
 <div id="main">
@@ -184,7 +227,7 @@
                             <!-- podcast -->
                         
                             
-                              <div class="content1 featured">
+                              <div class="content1 featured" data-cursor-text="View Work">
                                 <div class="left-image-section">
                                   <div class="image-wrapper">
                                     <img src="img/Rectangle_9.png" alt="Left-side Image">
@@ -204,7 +247,7 @@
                               <!-- podcast 2-->
                         
                             
-                              <div class="content1">
+                              <div class="content1" data-cursor-text="View Work">
                                 <div class="left-image-section1">
                                   <div class="image-wrapper1">
                                     <img src="img/2ndd.png" alt="Left-side Image">
@@ -219,260 +262,152 @@
                                 </div>
                                 <!-- Add additional content here if needed -->
                               </div>
-                          
-
                         
 
 
 
 
-                              <div class="content1">
-
-                                
-                                   
-                                    <div class="skillsbox">
-                                        <!-- Skills Box Title -->
-                                        <div class="skillsboxtitle">Skills</div>
-                                
-                                        
-
-
-                                        <!-- Icons -->
-                                        <div class="skillsboxlinkwrap">
-                                            
-                                            <!-- Product Design Icon -->
-                                            <a id="linkProductDesign" href="#" class="skillsboxlink">
-                                                <img src="img/canva.svg" alt="Product Design">
-                                            </a>
-                                            <!-- Product Desig Icon -->
-                                            <a id="linkProductDesig" href="#" class="skillsboxlink">
-                                                <img src="img/ai.svg" alt="Product Desig">
-                                            </a>
-                                            <!-- Brand Works Icon -->
-                                            <a id="linkBrandWorks" href="#" class="skillsboxlink">
-                                                <img src="img/ph.svg" alt="Brand Works">
-                                            </a>
-                                            <!-- Creative Directing Icon -->
-                                            <a id="linkCreativeDirecting" href="#" class="skillsboxlink">
-                                                <img src="img/sk.svg" alt="Creative Directing">
-                                            </a>
-                                            <!-- Mentoring Icon -->
-                                            <a id="linkMentoring" href="#" class="skillsboxlink">
-                                                <img src="img/figma.svg" alt="Mentoring">
-                                            </a>
-                                        </div>
-                                        
-
-
-                                    
-                                    
-                                        <!-- Content Boxes -->
-                                        <!-- Product Design Content -->
-                                        <div id="contentProductDesign" class="skillboxnewcontent">
-                                            <img src="img/canva.svg" alt="" class="skillboxiconnew">
-                                            <div class="skillboxtitlenew"><strong>Product Design</strong></div>
-                                            <p class="skillboxtextnew">Creating exciting products is my jam! Years of experience in the field and the know-how I built in years adds to the fun as a professional.</p>
-                                            <div class="back-icon">
-                                                <!-- Reference your local SVG file -->
-                                                <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
-                                            </div>
-                                        </div>
-                                            
-                                            <div id="contentProductDesig" class="skillboxnewcontent">
-                                                <img src="img/ai.svg" alt="" class="skillboxiconnew">
-                                                <div class="skillboxtitlenew"><strong>Product Desig</strong></div>
-                                                <p class="skillboxtextnew">Creating exciting products is my jam! Years of experience in the field and the know-how I built in years adds to the fun as a professional.</p>
-                                                <div class="back-icon">
-                                                    <!-- Reference your local SVG file -->
-                                                    <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
-                                                </div>
-                                        </div>
-                                        <!-- Brand Works Content -->
-                                        <div id="contentBrandWorks" class="skillboxnewcontent">
-                                            <img src="img/ph.svg" alt="" class="skillboxiconnew">
-                                            <div class="skillboxtitlenew"><strong>Brand Works</strong></div>
-                                            <p class="skillboxtextnew">What does your brand represent? How are we going to deliver your message together? Branding will be our answer.</p>
-                                            <div class="back-icon">
-                                                <!-- Reference your local SVG file -->
-                                                <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
-                                            </div>
-                                        </div>
-                                        <!-- Creative Directing Content -->
-                                        <div id="contentCreativeDirecting" class="skillboxnewcontent">
-                                            <img src="img/sk.svg" alt="" class="skillboxiconnew">
-                                            <div class="skillboxtitlenew"><strong>Creative Directing</strong></div>
-                                            <p class="skillboxtextnew">Making high-level creative decisions that lead to amazing product assets and designs? Now we’re talking!</p>
-                                            <div class="back-icon">
-                                                <!-- Reference your local SVG file -->
-                                                <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
-                                            </div>
-                                            
-                                        </div>
-                                        <!-- Mentoring Content -->
-                                        <div id="contentMentoring" class="skillboxnewcontent">
-                                            <img src="img/figma.svg" alt="" class="skillboxiconnew">
-                                            <div class="skillboxtitlenew"><strong>Mentoring</strong></div>
-                                            <p class="skillboxtextnew">You can reach out to me to get consultancy and mentoring on either building your idea from scratch, or making it even better.</p>
-                                            <div class="back-icon">
-                                                <!-- Reference your local SVG file -->
-                                                <img src="img/arrow-bottom-left.svg" alt="Back Icon" width="24" height="24">
-                                            </div>
-
-                                    </div>
-                                
-                                    <script>
-document.addEventListener('DOMContentLoaded', function () {
-    addClickListener('linkProductDesign', 'contentProductDesign');
-    addClickListener('linkProductDesig', 'contentProductDesig');
-    addClickListener('linkBrandWorks', 'contentBrandWorks');
-    addClickListener('linkCreativeDirecting', 'contentCreativeDirecting');
-    addClickListener('linkMentoring', 'contentMentoring');
- 
-
-});
-
-function addClickListener(linkId, contentId) {
-    var linkElement = document.getElementById(linkId);
-    if (linkElement) {
-        linkElement.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            // Toggle 'selected' class for this icon
-            this.classList.toggle('selected');
-
-            showContent(contentId);
-        });
-    }
-}
-
-// ... rest of your existing code ...
-
-
-
-function applyStyle(element, isInitial) {
-    if (isInitial) {
-        element.style = "will-change: transform; transform: translate3d(2.04px, -8.459px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;";
-    } else {
-        element.style = "will-change: transform; transform: translate3d(10.852px, 9.994px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;";
-    }
-}
-
-// ... rest of your existing code ...
-
-
-function showContent(contentId) {
-    // Hide all content boxes and reset their state
-    var allContents = document.querySelectorAll('.skillboxnewcontent');
-    for (var i = 0; i < allContents.length; i++) {
-        allContents[i].style.display = 'flex';
-        allContents[i].classList.remove('show');
-    }
-
-    // Display the clicked content with animation
-    var content = document.getElementById(contentId);
-    if (content) {
-        content.style.display = 'flex';
-        setTimeout(function() {
-            content.classList.add('show');
-        }, 10); // Timeout ensures the display: block is applied before adding the class for animation
-    }
-
-    // Show the back icon
-    var backIcon = document.querySelector('.back-icon');
-    if (backIcon) {
-        backIcon.style.display = 'block';
-    }
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    // ... existing code for skill icons ...
-
-    var backIcon = document.querySelector('.back-icon');
-    if (backIcon) {
-        backIcon.addEventListener('click', function() {
-            // Hide the content1 div
-            document.querySelector('.content1').style.display = 'flex';
-
-            // Hide the back icon itself
-            backIcon.style.display = 'flex';
-        });
-    }
-});
-
-
-
-    // Initialize back icon listeners
-    var backIcons = document.querySelectorAll('.back-icon');
-    backIcons.forEach(function(backIcon) {
-        backIcon.addEventListener('click', function() {
-            // Find the parent .skillboxnewcontent and hide it
-            var content = this.closest('.skillboxnewcontent');
-            if (content) {
-                content.classList.remove('show');
-                setTimeout(function() {
-                    content.style.display = 'flex';
-                }, 500); // Wait for the animation to finish
-            }
-        });
-    });
-
-function addClickListener(linkId, contentId) {
-    var linkElement = document.getElementById(linkId);
-    if (linkElement) {
-        linkElement.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            // Hide all content boxes and reset their state
-            var allContents = document.querySelectorAll('.skillboxnewcontent');
-            for (var i = 0; i < allContents.length; i++) {
-                allContents[i].style.display = 'flex';
-                allContents[i].classList.remove('show');
-            }
-
-            // Display the clicked content with animation
-            var content = document.getElementById(contentId);
-            if (content) {
-                content.style.display = 'flex';
-                setTimeout(function() {
-                    content.classList.add('show');
-                }, 10);
-            }
-        });
-    }
-}
-
-document.querySelectorAll('.skillsboxlink').forEach(function(icon) {
-    icon.addEventListener('mousemove', function(event) {
-        const bounds = this.getBoundingClientRect();
-        const centerX = bounds.left + bounds.width / 2;
-        const centerY = bounds.top + bounds.height / 2;
-        const deltaX = event.clientX - centerX;
-        const deltaY = event.clientY - centerY;
-
-        // Adjust the intensity of the magnet effect here
-        const intensity = 0.05; // Lower this value if the effect is too strong
-
-        const translateX = deltaX * intensity;
-        const translateY = deltaY * intensity;
-
-        // Apply a limit to the translation to prevent the icon from moving too far
-        const maxTranslation = 10; // Maximum translation in pixels
-        this.style.transform = `translate(${Math.min(translateX, maxTranslation)}px, ${Math.min(translateY, maxTranslation)}px) scale(1.05)`;
-    });
-
-    icon.addEventListener('mouseout', function() {
-        this.style.transform = 'translate(0, 0) scale(1)';
-    });
-});
-
-
-                                    </script>
-                                    
-
-                                </div>
-                            </div>
                             
 
+
+                              <div class="content1">
+                                <div class="skillsbox" id="skillsbox">
+                                    <!-- Matter.js canvas will be inserted here -->
+                                </div> 
+                            </div>
+                        
+                            <script>
+                                       document.addEventListener('DOMContentLoaded', function() {
+            var initialized = false;
+            var engine, worldBodies;
+
+            function initializeMatterJs() {
+                var Engine = Matter.Engine,
+                    Render = Matter.Render,
+                    World = Matter.World,
+                    Bodies = Matter.Bodies,
+                    Mouse = Matter.Mouse,
+                    MouseConstraint = Matter.MouseConstraint;
+
+                engine = Engine.create();
+                var render = Render.create({
+                    element: document.getElementById('skillsbox'),
+                    engine: engine,
+                    options: {
+                        wireframes: false,
+                        width: 368,
+                        height: 500
+                    }
+                });
+
+                // Image URLs
+                var imageUrls = [
+                    'https://i.postimg.cc/3N1pJJ9m/01.png',
+                    'https://i.postimg.cc/BQZH7HQg/02.png',
+                    'https://i.postimg.cc/vHP9JT4d/03.png',
+                    'https://i.postimg.cc/XYpF4W5B/04.png',
+                    'https://i.postimg.cc/4xqc30vL/05.png'
+                ];
+
+                var loadedImages = [];
+                var loadCount = 0;
+
+                function createImageBody(image, x, y, index) {
+                    var bodyOptions = {
+                        render: {
+                            sprite: {
+                                texture: image.src,
+                                xScale: 1,
+                                yScale: 1
+                            }
+                        }
+                    };
+
+                    var isCircle = index === 0 || index === 1;
+                    var body;
+                    if (isCircle) {
+                        var radius = Math.min(image.width, image.height) / 2;
+                        body = Bodies.circle(x, y, radius, bodyOptions);
+                    } else {
+                        body = Bodies.rectangle(x, y, image.width, image.height, bodyOptions);
+                    }
+
+                    Matter.Body.setAngle(body, Math.random() * Math.PI);
+
+                    return body;
+                }
+
+                imageUrls.forEach(function(url, index) {
+                    var img = new Image();
+                    img.onload = function() {
+                        loadedImages[index] = img;
+                        loadCount++;
+                        if (loadCount === imageUrls.length) {
+                            createWorld();
+                        }
+                    };
+                    img.src = url;
+                });
+
+                function createWorld() {
+                    worldBodies = loadedImages.map((img, index) => {
+                        var x = Math.max(img.width / 2, Math.min(360 - img.width / 2, 180 + (Math.random() - 0.5) * 200));
+                        var y = 50 + index * 80;
+                        return createImageBody(img, x, y, index);
+                    });
+
+                    var wallOptions = { isStatic: true };
+                    var ground = Bodies.rectangle(180, 510, 400, 40, wallOptions);
+                    var leftWall = Bodies.rectangle(-10, 250, 40, 600, wallOptions);
+                    var rightWall = Bodies.rectangle(370, 250, 40, 600, wallOptions);
+                    var ceiling = Bodies.rectangle(180, -10, 400, 40, wallOptions);
+
+                    World.add(engine.world, worldBodies.concat([ground, leftWall, rightWall, ceiling]));
+
+                    var mouse = Mouse.create(render.canvas),
+                        mouseConstraint = MouseConstraint.create(engine, {
+                            mouse: mouse,
+                            constraint: {
+                                stiffness: 0.2,
+                                render: {
+                                    visible: false
+                                }
+                            }
+                        });
+
+                    World.add(engine.world, mouseConstraint);
+                    render.mouse = mouse;
+
+                    Engine.run(engine);
+                    Render.run(render);
+                }
+            }
+
+            // Intersection Observer to detect when the skillsbox is visible
+            var observer = new IntersectionObserver(function(entries) {
+                if (entries[0].isIntersecting && !initialized) {
+                    initializeMatterJs();
+                    initialized = true;
+                    observer.unobserve(document.getElementById('skillsbox'));
+                }
+            }, { threshold: 0.1 });
+
+            observer.observe(document.getElementById('skillsbox'));
+
+            // Scroll event listener
+            window.addEventListener('scroll', function() {
+                if (initialized) {
+                    var forceMagnitude = 0.02;
+                    worldBodies.forEach(function(body) {
+                        var forceDirection = (window.scrollY > this.lastScrollY) ? 1 : -1;
+                        Matter.Body.applyForce(body, body.position, { x: 0, y: forceDirection * forceMagnitude });
+                    });
+                    this.lastScrollY = window.scrollY;
+                }
+            });
+        });
+    </script>
+                            
 
 
 
@@ -513,7 +448,7 @@ document.querySelectorAll('.skillsboxlink').forEach(function(icon) {
 
 
 
-                        <!-- <div class="content1">
+         <!-- <div class="content1">
                           <div class="music">
                             <img src="./img/spotify.png" alt="Music Image" style="width: 100%; height: 100%; border-radius: 20px;">
                         </div>
@@ -521,25 +456,24 @@ document.querySelectorAll('.skillsboxlink').forEach(function(icon) {
 
 
                         <div class="content1" style="background-image: url('./img/spotify.png'); background-size: cover; background-position: 50% 50%; border-radius: 20px; overflow: hidden;">
-                          <div class="music">
-                              <div class="last-played">
-                                  <div class="text-wrapper-31">
-                                      <img src="img/audio.gif" alt="GIF" class="spotify-gif">
-                                      Spotify 
-                                  </div>
-                                  <div class="frame">
-                                      <a href="" target="_blank" class="spotify-link" id="spotify-song-link">
-                                          <div class="text-wrapper" id="song-title">I Don't Belong</div>
-                                          <div class="text-wrapper-3" id="artist-name">Fontaines D.C.</div>
-                                      </a>
-                                  </div>
-                              </div>
-                              <div class="play-wrapper">
-                                  <img class="play" src="img/play.svg" alt="Play Button" />
-                              </div>
-                          </div>
-                      </div>
-
+                            <div class="music">
+                                <div class="last-played">
+                                    <div class="text-wrapper-31">
+                                        <img src="img/audio.gif" alt="GIF" class="spotify-gif">
+                                        Spotify 
+                                    </div>
+                                    <div class="frame">
+                                        <a href="" target="_blank" class="spotify-link" id="spotify-song-link">
+                                            <div class="text-wrapper" id="song-title">I Don't Belong</div>
+                                            <div class="text-wrapper-3" id="artist-name">Fontaines D.C.</div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="play-wrapper">
+                                    <img class="play" src="img/play.svg" alt="Play Button" />
+                                </div>
+                            </div>
+                        </div>
 
                       
                       
@@ -619,8 +553,7 @@ document.querySelectorAll('.skillsboxlink').forEach(function(icon) {
 
 
 
-
-<div class="content1 featured">
+<div class ="content1 featured" data-cursor-text="View Work">
   <div class="left-image-section">
     <div class="image-wrapper">
       <img src="img/Rectangle_99.png" alt="Left-side Image">
@@ -633,8 +566,49 @@ document.querySelectorAll('.skillsboxlink').forEach(function(icon) {
       </div>
     </div>
   </div>
-  <!-- Add additional content here if needed -->
-</div>
+</div> 
+
+<script>
+const cursor = new MouseFollower({
+    el: null,
+    container: document.body,
+    className: 'mf-cursor',
+    innerClassName: 'mf-cursor-inner',
+    textClassName: 'mf-cursor-text',
+    mediaClassName: 'mf-cursor-media',
+    mediaBoxClassName: 'mf-cursor-media-box',
+    iconSvgClassName: 'mf-svgsprite',
+    iconSvgNamePrefix: '-',
+    iconSvgSrc: '',
+    dataAttr: 'cursor',
+    hiddenState: '-hidden',
+    textState: '-text',
+    iconState: '-icon',
+    activeState: '-active',
+    mediaState: '-media',
+    stateDetection: {
+        '-pointer': 'a,button',
+        '-hidden': 'iframe'
+    },
+    visible: true,
+    visibleOnState: false,
+    speed: 0.55,
+    ease: 'expo.out',
+    overwrite: true,
+    skewing: 0,
+    skewingText: 2,
+    skewingIcon: 2,
+    skewingMedia: 2,
+    skewingDelta: 0.001,
+    skewingDeltaMax: 0.15,
+    stickDelta: 0.15,
+    showTimeout: 20,
+    hideOnLeave: true,
+    hideTimeout: 300,
+    hideMediaTimeout: 300
+});
+</script>
+ 
 
 
 
@@ -642,9 +616,7 @@ document.querySelectorAll('.skillsboxlink').forEach(function(icon) {
 
 
 
-
-
-                        <div class="content1">
+                        <div class="content1" data-cursor-text="View Work">
                           <div class="left-image-section1">
                             <div class="image-wrapper1">
                               <img src="img/6th.jpg" alt="Left-side Image">
@@ -775,6 +747,14 @@ document.querySelectorAll('.skillsboxlink').forEach(function(icon) {
   </div>
 </div>
 
+<div class="mf-cursor -hidden" style="translate: none; rotate: none; scale: none; will-change: auto; transform: translate(807.994px, 150.984px) rotate(-47.0144deg) scale(1, 1);">
+    <div class="mf-cursor-inner" style="translate: none; rotate: none; scale: none; transform: rotate(47.0144deg);">
+        <div class="mf-cursor-media">
+            <div class="mf-cursor-media-box"></div>
+        </div>
+        <div class="mf-cursor-text">View work</div>
+    </div>
+</div>
 
 
 
