@@ -364,174 +364,6 @@ font-weight: 500; /* This will make the text bold */
 
 
 
-/*Magic Tricks I Can Do */
-
-    .div1 {
-    position: relative;
-    width: 100%;
-    height: 500px;
-    border-radius: 20px;
-    background: linear-gradient(180deg, rgb(41, 41, 43) 0%, rgb(102, 102, 102) 100%);
-    }
-    .iconoir-remove-media {
-    position: absolute;
-    width: 88px;
-    height: 88px;
-    top: 412px;
-    left: 118px;
-    border-radius: 8px;
-    }
-    .div-2 {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 20px;
-    position: relative;
-    background-color: #f5f5f7;
-    border-radius: 99px;
-    overflow: hidden;
-    }
-    .skill-icons-figma {
-    position: relative;
-    width: 48px;
-    height: 48px;
-    }
-    .frame-wrapper {
-    top: 280px;
-    left: 13px;
-    transform: rotate(27.31deg);
-    position: absolute;
-    width: 88px;
-    height: 88px;
-    border-radius: 8px;
-    }
-    .img-wrapper {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 20px;
-    position: relative;
-    background-color: #f5f5f7;
-    border-radius: 8px;
-    }
-    .logos-adobe {
-    position: relative;
-    width: 64.67px;
-    height: 64.67px;
-    margin-top: -8.33px;
-    margin-bottom: -8.34px;
-    margin-left: -8.34px;
-    margin-right: -8.34px;
-    transform: rotate(-27.31deg);
-    }
-    .div-wrapper {
-    top: 306px;
-    left: 109px;
-    transform: rotate(44.52deg);
-    position: absolute;
-    width: 88px;
-    height: 88px;
-    border-radius: 8px;
-    }
-    .img {
-    position: relative;
-    width: 67.88px;
-    height: 67.88px;
-    margin-top: -9.94px;
-    margin-bottom: -9.94px;
-    margin-left: -9.94px;
-    margin-right: -9.94px;
-    transform: rotate(-44.52deg);
-    }
-    .iconoir-remove-media-2 {
-    top: 397px;
-    left: 15px;
-    transform: rotate(-27.03deg);
-    position: absolute;
-    width: 88px;
-    height: 88px;
-    border-radius: 8px;
-    }
-     .vscode-icons-file {
-    position: relative;
-    width: 64.57px;
-    height: 64.57px;
-    margin-top: -8.29px;
-    margin-bottom: -8.28px;
-    margin-left: -8.29px;
-    margin-right: -8.29px;
-    transform: rotate(27.03deg);
-    }
-    .iconoir-remove-media-3 {
-    top: 412px;
-    left: 208px;
-    position: absolute;
-    width: 88px;
-    height: 88px;
-    border-radius: 8px;
-    }
-    .canva {
-    position: relative;
-    width: 48px;
-    height: 48px;
-    background-image: url(./img/canva-1.png);
-    background-size: cover;
-    background-position: 50% 50%;
-    }
-    .text-wrapper4 {
-    position: absolute;
-    height: 19px;
-    top: 38px;
-    left: 39px;
-    font-family: "Jost", sans-serif;
-    font-weight: 500;
-    color: var(--style);
-    font-size: 16px;
-    letter-spacing: 0;
-    line-height: normal;
-    white-space: nowrap;
-    }
-    
-
-
-
-    #matter-js-container {
-      width: 800px; /* or 100% for full width */
-      height: 600px;
-      margin: auto; /* for centering if needed */
-      border: 1px solid #ccc; /* optional border */
-  }
-  
-
-
-/* 
-    skillss */
-
-    .skillsbox {
-      height: 500px;
-      background-color: #3c3c3c;
-      flex-direction: column;
-      /* display: flex; */
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .skillsboxtitle {
-      color: rgba(255, 255, 255, .5);
-      margin-bottom: 1%;
-      padding: 15px;
-      font-size: 1.1em;
-      font-weight: 500;
-      line-height: 1.6em;
-    }
-    
-
-
-
-
-
 
 
 
@@ -542,25 +374,37 @@ font-weight: 500; /* This will make the text bold */
 
 /* Music */
 
+.content1 {
+  position: relative; /* Makes it the reference point for its absolutely positioned children */
+}
+
+.skillsbox .text-wrapper-3 {
+  position: absolute; /* Positions it absolutely within .content1 */
+  top: 32px; /* Aligns to the top of the .content1 container */
+  left: 32px; /* Aligns to the left of the .content1 container */
+  color: white; /* Sets the text color to white */
+  font-family: "Jost", sans-serif;
+}
+
+
 .music {
   display: flex;
   flex-direction: column;
   height: 359px;
   align-items: flex-start;
-  gap: 60px;
   padding: 37px 38px;
   position: relative;
-  background-image: url(./img/spotify.png);
   background-size: cover;
   background-position: 50% 50%;
+  justify-content: space-between; /* Added this line */
 }
+
 
 .music .last-played {
   display: flex;
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  gap: 16px;
   position: relative;
   align-self: stretch;
   width: 100%;
@@ -578,70 +422,14 @@ font-weight: 500; /* This will make the text bold */
   flex: 0 0 auto;
 }
 
-.music .div {
-  position: relative;
-  align-self: stretch;
-  margin-top: -1px;
-  font-family: "Jost", sans-serif;
-  font-weight: 600;
-  color: #000000;
-  font-size: 40px;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-
-.music .play-wrapper {
-  position: relative;
-  display: flex; /* Enables flexbox */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  padding: 14px;
-  background-color: #E8E8E8; /* Orange background */
-  border-radius: 99px; /* Rounded corners */
-}
-
-
-
-.music .play {
-  width: 76px; /* Set width as needed */
-  height: 76px; /* Set height as needed */
-background-color: #f5f5f7;
-border-radius: 38px;
-border: 1px solid;
-border-color: #ffffff33;
-box-shadow: 0px 4px 4px #0000001a;
-transition: transform 0.2s ease;
-}
-
-
-
-.music .play:hover {
-  animation: float 1s ease-in-out infinite; /* Apply the floating animation on hover */
-}
-
-
-
-@keyframes float {
-  0%, 100% {
-      transform: translate(0, 0);
-  }
-  25% {
-      transform: translate(-3px, -3px);
-  }
-  50% {
-      transform: translate(3px, -3px);
-  }
-  75% {
-      transform: translate(3px, 3px);
-  }
-}
-
 
 .text-wrapper-31 {
   display: flex; /* Enables flexbox */
   align-items: center; /* Aligns items vertically in the center */
+  font-family: "Jost", sans-serif;
+  font-size: 22px;
   gap: 8px; /* Adjust this value for space between the GIF and text */
+  font-weight: 500;
   color: #1ED760;
 }
 
@@ -912,14 +700,14 @@ transition: transform 0.2s ease;
 
 /* POINTER......... */
 
-/* .left-image-section1, 
+.left-image-section1, 
 .left-image-section1 .image-overlay-container,
 .left-image-section1 .text-overlay,
 .content1.featured .left-image-section, 
 .content1.featured .left-image-section .image-overlay-container,
 .content1.featured .left-image-section .text-overlay {
     cursor: pointer; 
-} */
+}
 
 
 
@@ -1017,6 +805,15 @@ transition: transform 0.2s ease;
 
 
 
+/* Base styles for the pin */
+.custom-pin {
+  transition: transform 0.3s ease; /* Smooth transition for the transform property */
+}
+
+/* Hover state styles for the pin */
+.custom-pin:hover {
+  transform: scale(1.2) rotate(15deg); /* Scale up and rotate slightly */
+}
 
 
 
