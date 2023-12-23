@@ -1,6 +1,7 @@
 
 
 .text-wrapper {
+  font-family: "Jost", sans-serif;
   font-size: 32px;
   font-weight: 700;
   color: #000000;
@@ -267,6 +268,8 @@ body {
                   .btn-cta-title > * {
                       position: relative;
                       display: block;
+                      font-family: "Jost", sans-serif;
+                      font-weight: 500; /* This will make the text bold */
                       z-index: 2;
                       transition-duration: 0.4s;
                   }

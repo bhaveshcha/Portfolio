@@ -269,12 +269,14 @@
 
                             
 
-
                               <div class="content1">
                                 <div class="skillsbox" id="skillsbox">
+                                    <div class="text-wrapper-3">Magic Things I Can Do</div>
                                     <!-- Matter.js canvas will be inserted here -->
                                 </div> 
                             </div>
+                            
+                            
                         
                             <script>
                                        document.addEventListener('DOMContentLoaded', function() {
@@ -448,19 +450,13 @@
 
 
 
-         <!-- <div class="content1">
-                          <div class="music">
-                            <img src="./img/spotify.png" alt="Music Image" style="width: 100%; height: 100%; border-radius: 20px;">
-                        </div>
-                        </div> -->
-
-
-                        <div class="content1" style="background-image: url('./img/spotify.png'); background-size: cover; background-position: 50% 50%; border-radius: 20px; overflow: hidden;">
+                        <div class="content1">
                             <div class="music">
+                                <img class="Instagram" src="img/spotify-icon.svg" />
                                 <div class="last-played">
                                     <div class="text-wrapper-31">
                                         <img src="img/audio.gif" alt="GIF" class="spotify-gif">
-                                        Spotify 
+                                        Offline. Last Played 
                                     </div>
                                     <div class="frame">
                                         <a href="" target="_blank" class="spotify-link" id="spotify-song-link">
@@ -468,9 +464,6 @@
                                             <div class="text-wrapper-3" id="artist-name">Fontaines D.C.</div>
                                         </a>
                                     </div>
-                                </div>
-                                <div class="play-wrapper">
-                                    <img class="play" src="img/play.svg" alt="Play Button" />
                                 </div>
                             </div>
                         </div>
@@ -480,6 +473,9 @@
 
                       
 
+
+
+                        
 
                       <div class="content1">
                         <div class="left-image-section2">
@@ -494,48 +490,61 @@
                         </div> 
                     </div>
                     
-                    <!-- Bing Maps API and Custom Zoom Control Script -->
-                    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=AvVsginkg5b3amw4KichuqjKTTPe82GfzxfjCOLy094DXJBXLK4zN0DaDyHx8q6A&callback=loadMapScenario' async defer></script>
-                    <script type='text/javascript'>
-                    var map;
-                    function loadMapScenario() {
-                        map = new Microsoft.Maps.Map('#bingMap', {
-                            center: new Microsoft.Maps.Location(29.147583, 79.512543),
-                            zoom: 12,
-                            disablePanning: true,
-                            disableZooming: true,
-                            showLocateMeButton: false,
-                            showMapTypeSelector: false,
-                            disablePanning: true,
-                            disableZooming: true,
-                            showZoomButtons: false,
-                            disableZooming: true,
-                            disableMouseInput: true,
-                            showScalebar: false  // Disable the scalebar
-                        });
-                    
-                        var zoomInButton = document.getElementById('zoomIn');
-                        var zoomOutButton = document.getElementById('zoomOut');
-                    
-                        zoomInButton.onclick = function() {
-                            map.setView({ zoom: map.getZoom() + 1 });
-                        };
-                    
-                        zoomOutButton.onclick = function() {
-                            map.setView({ zoom: map.getZoom() - 1 });
-                        };
-                    
-                        Microsoft.Maps.Events.addHandler(map, 'viewchangeend', function() {
-                            var zoomLevel = map.getZoom();
-                            if (zoomLevel > 1) {
-                                zoomInButton.style.display = 'block';
-                            } else {
-                                zoomInButton.style.display = 'none';
-                            }
-                        });
-                    }
-                    </script>
+                  <!-- Bing Maps API and Custom Zoom Control Script -->
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Ap0hhESfjQZuzuZOS9DH8JerbHpneu-IaDTAToRv8HfQ4OQmytHyVzaxEaUHBytv&callback=loadMapScenario' async defer></script>
+<script type='text/javascript'>
+var map;
+function loadMapScenario() {
+    var centerLocation = new Microsoft.Maps.Location(29.147583, 79.512543); // Example coordinates
 
+    map = new Microsoft.Maps.Map('#bingMap', {
+        center: centerLocation,
+        zoom: 12,
+        disablePanning: true,
+        disableZooming: true,
+        showLocateMeButton: false,
+        showMapTypeSelector: false,
+        showZoomButtons: false,
+        disableMouseInput: true,
+        showScalebar: false  // Disable the scalebar
+    });
+
+
+    // Relative path to the local image
+    var pinImageUrl = "https://i.postimg.cc/3N1pJJ9m/01.png"; // Ensure this path is correct
+
+    // Create a custom Pushpin
+    var pin = new Microsoft.Maps.Pushpin(centerLocation, {
+        icon: pinImageUrl, // Reference to local image
+        anchor: new Microsoft.Maps.Point(12, 39) // Adjust based on image dimensions
+    });
+
+    // Add the pushpin to the map
+    map.entities.push(pin);
+
+    // Zoom control buttons
+    var zoomInButton = document.getElementById('zoomIn');
+    var zoomOutButton = document.getElementById('zoomOut');
+
+    zoomInButton.onclick = function() {
+        map.setView({ zoom: map.getZoom() + 1 });
+    };
+
+    zoomOutButton.onclick = function() {
+        map.setView({ zoom: map.getZoom() - 1 });
+    };
+
+    // Handling the display of the zoom in button based on zoom level
+    Microsoft.Maps.Events.addHandler(map, 'viewchangeend', function() {
+        var zoomLevel = map.getZoom();
+        if (zoomLevel > 1) {
+            zoomInButton.style.display = 'block';
+        } else {
+            zoomInButton.style.display = 'none';
+        }
+    });
+}
+</script>
 
 
 
@@ -568,7 +577,7 @@
   </div>
 </div> 
 
-<script>
+<!-- <script>
 const cursor = new MouseFollower({
     el: null,
     container: document.body,
@@ -608,7 +617,7 @@ const cursor = new MouseFollower({
     hideMediaTimeout: 300
 });
 </script>
- 
+  -->
 
 
 
@@ -662,10 +671,6 @@ const cursor = new MouseFollower({
                                     <div class="text_white font-s-p">Find out more</div>
                                 </div>
                             </a>
-                            
-                              
-                            
-
                             </div>
                           </div>
                         </div>
