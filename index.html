@@ -537,25 +537,33 @@
                                     }
                                 };
                         
-                                // Update the zoom level on the map
-                                function updateZoomLevel() {
-                                    var newZoomLevel = calculateZoomLevel();
-                                    map.setView({ zoom: newZoomLevel, animate: true });
-                                    setTimeout(updateZoomButtons, 300); // Adjust delay as needed
-                                }
-                        
-                                function calculateZoomLevel() {
-                                    // Define the zoom levels based on zoomCount
-                                    switch (zoomCount) {
-                                        
-                                        default:
-                                            return 10; // Default to initial zoom level
-                                        case -1: // Intermediate zoom out
-                                            return 5;
-                                        case -2: // Maximum zoom out
-                                            return 0;
-                                    }
-                                }
+                               // Update the zoom level on the map
+function updateZoomLevel() {
+    var newZoomLevel = calculateZoomLevel();
+    // Trigger the map to update its zoom level with animation
+    map.setView({ zoom: newZoomLevel, animate: true });
+
+    // Adjust the timing or add additional animations if needed
+    // This timeout is adjusted to match the expected duration of the map's zoom animation
+    setTimeout(updateZoomButtons, 500); // Adjust this delay based on the actual animation time
+}
+
+function calculateZoomLevel() {
+    // Smoother transitions between zoom levels
+    switch (zoomCount) {
+        case 1:
+            return 12; // Slightly closer
+        case 0:
+            return 10; // Default zoom level
+        case -1:
+            return 7; // Slightly further away
+        case -2:
+            return 3; // More zoomed out
+        default:
+            return 10; // Default to initial zoom level
+    }
+}
+
                         
                                 // Update the state of the zoom buttons
                                 function updateZoomButtons() {
