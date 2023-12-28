@@ -573,35 +573,70 @@ font-weight: 500; /* This will make the text bold */
 
 
 
-
 /* maps zoom in and out */
-
 #zoomIn, #zoomOut {
-    background: rgb(255, 255, 255);
-    width: 36px;
-    height: 36px;
-    border-radius: 18px;
-    position: absolute;
-    bottom: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: box-shadow 0.2s ease 0s;
-    will-change: transform;
-    z-index: 1;
+  background: rgb(255, 255, 255);
+  width: 42px;
+  height: 42px;
+  border-radius: 99px;
+  position: absolute;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  will-change: transform, opacity;
+  z-index: 1;
+  border: 2px solid rgb(158, 183, 138); /* Solid border color */
 }
 
 #zoomIn {
-    left: 10px;
+    left: 16px;
 }
 
 #zoomOut {
-    right: 10px;
+    right: 16px;
 }
 
-#bingMap {
-    touch-action: none; /* Disables default touch behaviors like pinch-to-zoom and pan */
+/* Hover effect for zoom buttons */
+#zoomIn:hover, #zoomOut:hover {
+  transform: scale(1.1); /* Slightly increase the size */
+  opacity: 0.8; /* Slightly transparent */
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
 }
+
+
+/* styles.css */
+
+/* Initial state of the image with smooth transition */
+#centeredImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Ensure the image is centered with translate, this remains constant */
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 128px;
+  height: 128px;
+  /* Apply a smooth transition effect to transformations */
+  transition: transform 0.5s ease;
+}
+
+/* Hover effect on the entire content section */
+.content1:hover #centeredImage {
+  /* Combine scaling and rotation with the existing translation */
+  transform: translate(-50%, -50%) scale(1.20) rotate(5deg);
+}
+
+
+.bm_bottomRightOverlay {
+  display: none !important;
+}
+
+.bm_bottomLeftOverlay {
+  display: none !important;
+}
+
 
 
 
@@ -800,20 +835,6 @@ font-weight: 500; /* This will make the text bold */
 
 
 
-
-
-
-
-
-/* Base styles for the pin */
-.custom-pin {
-  transition: transform 0.3s ease; /* Smooth transition for the transform property */
-}
-
-/* Hover state styles for the pin */
-.custom-pin:hover {
-  transform: scale(1.2) rotate(15deg); /* Scale up and rotate slightly */
-}
 
 
 

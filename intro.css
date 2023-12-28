@@ -26,6 +26,7 @@
 
 .title-3-gsap {
   font-size: 3vw;
+  font-family: "Jost", sans-serif;
   font-weight: 500;
   margin: 10px; /* This line removes any default margin from the paragraphs */
 }
