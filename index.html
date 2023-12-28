@@ -471,86 +471,125 @@
                       
                       
 
-                      
+
+
+
+
 
 
 
                         
 
-                      <div class="content1">
-                        <div class="left-image-section2">
-                            <div class="image-wrapper" style="overflow: hidden; border-radius: 20px; position: relative; padding-top: 56.25%;">
-                                <!-- Bing Maps Container -->
-                                <div id="bingMap" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
-                    
-                                <!-- Custom Zoom Controls -->
-                                <button id="zoomIn" style="display: none;">+</button>
-                                <button id="zoomOut">-</button>
-                            </div>
-                        </div> 
-                    </div>
-                    
-                  <!-- Bing Maps API and Custom Zoom Control Script -->
-<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=Ap0hhESfjQZuzuZOS9DH8JerbHpneu-IaDTAToRv8HfQ4OQmytHyVzaxEaUHBytv&callback=loadMapScenario' async defer></script>
-<script type='text/javascript'>
-var map;
-function loadMapScenario() {
-    var centerLocation = new Microsoft.Maps.Location(29.147583, 79.512543); // Example coordinates
-
-    map = new Microsoft.Maps.Map('#bingMap', {
-        center: centerLocation,
-        zoom: 12,
-        disablePanning: true,
-        disableZooming: true,
-        showLocateMeButton: false,
-        showMapTypeSelector: false,
-        showZoomButtons: false,
-        disableMouseInput: true,
-        showScalebar: false  // Disable the scalebar
-    });
+                        <div class="content1">
+                            <img id="centeredImage" src="https://i.postimg.cc/x8Cm5BJB/1.png"/>
+                            <div class="left-image-section2">
+                                <div class="image-wrapper" style="overflow: hidden; border-radius: 20px; position: relative; padding-top: 56.25%;">
+                                    <!-- Bing Maps Container -->
+                                    <div id="bingMap" style="border:0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+                                    
+                                    <!-- Custom Zoom Controls -->
+                                    <button id="zoomIn" style="display: none;">+</button>
+                                    <button id="zoomOut">-</button>
+                                </div>
+                            </div> 
+                        </div>
 
 
-    // Relative path to the local image
-    var pinImageUrl = "https://i.postimg.cc/3N1pJJ9m/01.png"; // Ensure this path is correct
+                        
+                        <script type='text/javascript'>
+                            var map;
+                            var zoomLevel = 10; // Set initial zoom level to 10
+                            var zoomCount = 0; // Count of zoom actions performed, starting at 0 for default zoom level
+                        
+                            function loadMapScenario() {
+                                var indiaLocation = new Microsoft.Maps.Location(29.140036, 79.501166); // Coordinates for India
+                        
+                                // Initialize the map
+                                map = new Microsoft.Maps.Map('#bingMap', {
+                                    center: indiaLocation,
+                                    zoom: zoomLevel,
+                                    disablePanning: true,
+                                    disableZooming: true,
+                                    showLocateMeButton: false,
+                                    showMapTypeSelector: false,
+                                    showZoomButtons: false,
+                                    disableMouseInput: true,
+                                    showScalebar: false
+                                });
+                        
+                                // Zoom control buttons
+                                var zoomInButton = document.getElementById('zoomIn');
+                                var zoomOutButton = document.getElementById('zoomOut');
+                        
+                                // Zoom In functionality
+                                zoomInButton.onclick = function() {
+                                    if (zoomCount < 2) { // Allows for 3 distinct zoom levels
+                                        zoomCount++;
+                                        updateZoomLevel();
+                                    }
+                                };
+                        
+                                // Zoom Out functionality
+                                zoomOutButton.onclick = function() {
+                                    if (zoomCount > -2) { // Allows for 3 distinct zoom levels
+                                        zoomCount--;
+                                        updateZoomLevel();
+                                    }
+                                };
+                        
+                               // Update the zoom level on the map
+function updateZoomLevel() {
+    var newZoomLevel = calculateZoomLevel();
+    // Trigger the map to update its zoom level with animation
+    map.setView({ zoom: newZoomLevel, animate: true });
 
-    // Create a custom Pushpin
-    var pin = new Microsoft.Maps.Pushpin(centerLocation, {
-        icon: pinImageUrl, // Reference to local image
-        anchor: new Microsoft.Maps.Point(12, 39) // Adjust based on image dimensions
-    });
-
-    // Add the pushpin to the map
-    map.entities.push(pin);
-
-    // Zoom control buttons
-    var zoomInButton = document.getElementById('zoomIn');
-    var zoomOutButton = document.getElementById('zoomOut');
-
-    zoomInButton.onclick = function() {
-        map.setView({ zoom: map.getZoom() + 1 });
-    };
-
-    zoomOutButton.onclick = function() {
-        map.setView({ zoom: map.getZoom() - 1 });
-    };
-
-    // Handling the display of the zoom in button based on zoom level
-    Microsoft.Maps.Events.addHandler(map, 'viewchangeend', function() {
-        var zoomLevel = map.getZoom();
-        if (zoomLevel > 1) {
-            zoomInButton.style.display = 'block';
-        } else {
-            zoomInButton.style.display = 'none';
-        }
-    });
+    // Adjust the timing or add additional animations if needed
+    // This timeout is adjusted to match the expected duration of the map's zoom animation
+    setTimeout(updateZoomButtons, 500); // Adjust this delay based on the actual animation time
 }
-</script>
 
+function calculateZoomLevel() {
+    // Smoother transitions between zoom levels
+    switch (zoomCount) {
+        case 1:
+            return 12; // Slightly closer
+        case 0:
+            return 10; // Default zoom level
+        case -1:
+            return 7; // Slightly further away
+        case -2:
+            return 3; // More zoomed out
+        default:
+            return 10; // Default to initial zoom level
+    }
+}
 
+                        
+                                // Update the state of the zoom buttons
+                                function updateZoomButtons() {
+                                    // Disable or enable buttons based on zoomCount
+                                    zoomInButton.disabled = zoomCount >= 0;
+                                    zoomOutButton.disabled = zoomCount <= -2;
+                        
+                                    // Optionally, hide or show the buttons at the ends
+                                    zoomOutButton.style.display = zoomCount <= -2 ? 'none' : 'block';
+                                    zoomInButton.style.display = zoomCount >= 0 ? 'none' : 'block';
+                                }
+                        
+                                // Initialize button states and map view
+                                updateZoomButtons();
+                                updateZoomLevel();
+                            }
+                        </script>
+                        
+                        
 
-
-
-
+                            
+                            
+                            
+                            
+      
+                    
 
 
 
@@ -763,35 +802,8 @@ const cursor = new MouseFollower({
 
 
 
-<!--  Gsap is needed for Basic Effects -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-<!-- Scroll Trigger is needed for Scroll Effects -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-<!-- Three.js is needed for 3d Effects -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
-
-<!-- ControlKit is needed for Debug Panel -->
-<script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
-<script src="script.js"></script>
-
-<script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>
 
 </div>
-
-
-
-
-
-
-  
-
-
-
-
-
-
 
 
 
