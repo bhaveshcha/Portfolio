@@ -455,7 +455,7 @@ font-weight: 500; /* This will make the text bold */
 
 
 
-
+/* images container */
 
 
 .flex-container {
@@ -536,7 +536,7 @@ font-weight: 500; /* This will make the text bold */
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
 }
 
-.text-overlay {
+/* .text-overlay {
   position: absolute;
   bottom: 10%;
   left: 5%;
@@ -560,6 +560,32 @@ font-weight: 500; /* This will make the text bold */
   font-weight: 500;
   line-height: 46px;
 }
+
+ */
+
+
+
+ .image-wrapper1 img, .image-wrapper img {
+  display: none; /* Hide all images initially */
+  position: absolute; /* Overlay images on top of each other */
+  top: 0;
+  transition: opacity 0.5s; /* Smooth transition for the fade effect */
+}
+
+.image-wrapper1 img:first-child, .image-wrapper img:first-child {
+  display: block; /* Show the first image by default */
+}
+
+.content1:hover .image-wrapper img, .content1:hover .image-wrapper1 img {
+  display: block; /* Ensure images are displayed during hover */
+}
+
+/* Optional: Add some styles for the hover effect */
+.content1:hover .image-overlay-container .overlay-gradient,
+.content1.featured:hover .image-overlay-container .overlay-gradient {
+  /* Your hover effect styles for the overlay */
+}
+
 
 
 

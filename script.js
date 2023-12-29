@@ -93,6 +93,48 @@
 
 
 
+// images aniamtion
+
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    // Function to initialize hover effect
+    function initHoverEffect(sectionClass) {
+      var sections = document.querySelectorAll(sectionClass);
+
+      sections.forEach(function(section) {
+        var images = section.querySelectorAll('.image-wrapper img, .image-wrapper1 img');
+        var currentImage = 0;
+
+        function nextImage() {
+          images[currentImage].style.opacity = 1; // Hide current image
+          currentImage = (currentImage + 1) % images.length; // Move to the next image
+          images[currentImage].style.opacity = 1; // Show next image
+        }
+
+        section.addEventListener('mouseenter', function() {
+          // Start the interval when hovering
+          imageInterval = setInterval(nextImage, 1000); // Change image every 2 seconds
+        });
+
+        section.addEventListener('mouseleave', function() {
+          // Clear the interval when not hovering
+          clearInterval(imageInterval);
+          // Hide all images except the first one
+          images.forEach((img, index) => {
+            img.style.opacity = index === 0 ? 1 : 0;
+          });
+          currentImage = 0; // Reset the counter to the first image
+        });
+      });
+    }
+
+    // Initialize hover effect for both sections
+    initHoverEffect('.content1');
+    initHoverEffect('.content1.featured');
+  });
+
+
 
 
 
