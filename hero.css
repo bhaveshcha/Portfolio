@@ -13,12 +13,12 @@
 .hero-section .frame {
   position: relative;
   width: 1164px;
-  height: 885px;
+  height: 700px;
 }
 
 .hero-section .overlap {
   position: relative;
-  height: 829px;
+  height: 700px;
 }
 
 .hero-section .text {
@@ -40,6 +40,17 @@
   top: 0;
   left: 23px;
 }
+
+.hero-section .div > * {
+  margin-bottom: -50px; /* Negative margin to create an overlap effect */
+}
+
+/* Resetting the margin for the last child to prevent extra spacing at the bottom */
+.hero-section .div > *:last-child {
+  margin-bottom: 0;
+}
+
+
 
 .hero-section .webdesigner {
   position: relative;
@@ -103,8 +114,8 @@
 
 .hero-section .group {
   position: absolute;
-  width: 815px;
-  height: 829px;
+  width: 760px;
+  height: auto;
   top: 0;
   left: 182px;
 }
@@ -153,7 +164,7 @@
 
   .hero-section .text {
       top: initial;
-      bottom: 0; /* Move text to the bottom */
+      bottom: -190px; /* Move text to the bottom */
   }
 
   .hero-section .overlap-group {
@@ -185,10 +196,11 @@
 
   .hero-section .cool-sites {
       top: initial;
-      bottom: 40px; /* Move cool-sites below the image */
+      bottom: -10px; /* Move cool-sites below the image */
       left: initial;
-      right: 6px; /* Adjust position */
-      transform: rotate(0deg); /* Reset rotation */
+      right: -156px; /* Adjust position */
+      transform: rotate(-16.93deg); /* Reset rotation */
+      padding: 20px 24px; /* Reduced padding for mobile devices */
   }
 
   .hero-section .group {
@@ -199,34 +211,24 @@
       left: initial; /* Reset left */
       order: 1; /* Move group image below the overlap-group */
   }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Existing styles... */
-
-/* Mobile responsiveness */
-@media only screen and (max-width: 600px) {
-  /* ... other responsive styles ... */
 
 
 
   .hero-section .group {
-    margin-top: 160px; /* Add space above the image */
+    margin-top: 30px; /* Add space above the image */
   }
 
   /* ... other responsive styles ... */
+
+
+  .hero-section .text-wrapper {
+    display: none; /* This will hide the text on mobile devices */
+}
+
+
+
+  .nav-bar .location {
+    display: none;
+  }
 }

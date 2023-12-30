@@ -94,7 +94,6 @@
         <div class="nav-bar">
             <div class="frame">
             <img class="loogo" src="img/loogo.svg" />
-            <img class="element" src="img/1.gif" />
             </div>
 
             <div class="location">
@@ -163,7 +162,7 @@
                       </div>
                   </div>
               </div>
-              <img class="group" src="img/group.png" />
+              <img class="group" src="img/grouup.png" />
           </div>
       </div>
       
@@ -670,7 +669,31 @@ const cursor = new MouseFollower({
 </script>
  
 
-
+<script>
+    // Function to initialize the custom cursor
+    function initCustomCursor() {
+      const cursor = new MouseFollower({
+        // ... all your existing options
+      });
+    }
+  
+    // Check if the screen width is more than 768px
+    if (window.innerWidth > 768) {
+      // Initialize the custom cursor for non-mobile devices
+      initCustomCursor();
+    }
+  
+    // Optional: Re-check on window resize or orientation change if needed
+    window.addEventListener('resize', function() {
+      if (window.innerWidth <= 768) {
+        // Optionally, implement logic to properly destroy or hide the custom cursor for smaller screens
+      } else {
+        // Re-initialize the custom cursor for larger screens
+        initCustomCursor();
+      }
+    });
+  </script>
+  
 
 
 
