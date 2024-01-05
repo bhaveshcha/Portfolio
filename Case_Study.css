@@ -1,0 +1,236 @@
+.boody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Jost', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  margin: auto;
+  margin-bottom: 162px;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+.container {
+  width: 100%; /* Full width */
+  height: auto; /* Height is set to auto to maintain aspect ratio */
+  max-width: 1200px;
+  margin-top: 162px;
+  position: relative; /* For positioning full-width images */
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Stack children vertically */
+  gap: 96px; /* Add 96px gap between flex items */
+}
+
+
+.image-container {
+  width: 100%;
+  max-width: 1168px; /* Adjust as needed */
+  height: auto;
+}
+
+
+.parallax {
+  width: 100vw;
+  position: relative;
+  max-width: none;
+  background-image: url("img/case1.jpg");
+  min-height: 800px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+h1, h2, h3 {
+  color: #000;
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 1.4; /* Average line height */
+}
+
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+p {
+  font-size: 24px;
+}
+
+
+.intro-section {
+  width: 900px;
+  align-self: flex-start; /* Aligns this item to the start of the flex container */
+}
+
+
+
+.section{
+  width: 900px;
+}
+
+
+.drop-cap::first-letter {
+  float: left;
+  font-size: 3em; /* Adjust size as needed */
+  line-height: 1; /* Adjust line height to control the drop cap height */
+  margin-right: 8px; /* Space between the drop cap and the rest of the text */
+  font-weight: 500; /* Set font weight to 500 */
+  color: rgb(0, 0, 0);
+}
+
+
+
+.closebutton {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  top: calc(37px);
+  left: calc(50% - 23px);
+  border-radius: 23px;
+  border: none;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+  background: rgb(237, 233, 233);
+}
+
+
+.closebutton:hover {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+  .container, .intro-section, .section {
+    width: calc(100% - 40px); /* Adjust width to account for margins */
+    padding: 0 20px; /* 20px side margins */
+  }
+
+  h1 {
+    font-size: 3em; /* Smaller font size for h1 */
+  }
+
+  h2 {
+    font-size: 2em; /* Smaller font size for h2 */
+  }
+
+  p {
+    font-size: 18px; /* Smaller font size for paragraphs */
+  }
+
+  .drop-cap::first-letter {
+    font-size: 3em; /* Adjust drop cap size */
+  }
+
+  .parallax {
+    width: 100vw;
+    position: relative;
+    max-width: none;
+    background-image: url("img/case1.jpg");
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .container, .intro-section, .section {
+    width: calc(100% - 30px); /* Adjust width for smaller screens */
+    padding: 0 15px; /* 15px side margins */
+  }
+
+  h1 {
+    font-size: 2.5em; /* Even smaller font size for h1 */
+  }
+
+  h2 {
+    font-size: 1.5em; /* Even smaller font size for h2 */
+  }
+
+  .drop-cap::first-letter {
+    font-size: 3.2em; /* Further adjust drop cap size */
+  }
+
+  .parallax {
+    width: 100vw;
+    position: relative;
+    max-width: none;
+    background-image: url("img/case1.jpg");
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.container img {
+  width: 100%; /* Full width */
+  height: auto; /* Height is set to auto to maintain aspect ratio */
+}
+
+/* For tablets and smaller devices */
+@media (max-width: 768px) {
+  .container, .intro-section, .section {
+    width: calc(100% - 40px); /* Adjust width to account for margins */
+    padding: 0 20px; /* 20px side margins */
+    gap: 48px; 
+  }
+
+  .container img {
+    width: 100%; /* Full width */
+    height: auto; /* Height is set to auto to maintain aspect ratio */
+  }
+
+  /* ... other styles ... */
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+  .container, .intro-section, .section {
+    width: calc(100% - 30px); /* Adjust width for smaller screens */
+    padding: 0 15px; /* 15px side margins */
+    gap: 48px; 
+  }
+
+  .container img {
+    width: 100%; /* Full width */
+    height: auto; /* Height is set to auto to maintain aspect ratio */
+  }
+
+  /* ... other styles ... */
+}
