@@ -365,3 +365,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+
+
+  window.addEventListener('scroll', function() {
+    var scrollPosition = window.pageYOffset;
+    var backgroundPosition = "50% " + (scrollPosition * 0.5) + "px";
+    document.querySelector('.full-width').style.backgroundPosition = backgroundPosition;
+  });
+
