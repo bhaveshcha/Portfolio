@@ -1,115 +1,31 @@
+/* Base styles */
+
 .hero-section {
   display: flex;
   flex-direction: column;
-  max-width: 1136px; /* same as nav-bar */
-  width: 100%; /* takes full width but respects max-width */
+  max-width: 1136px;
+  width: 100%;
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: 0 auto; /* centers the hero section */
+  margin: 0 auto;
   position: relative;
-}
-
-.hero-section .frame {
-  position: relative;
-  width: 1164px;
-  height: 700px;
-}
-
-.hero-section .overlap {
-  position: relative;
-  height: 700px;
-}
-
-.hero-section .text {
-  position: absolute;
-  top: 180px;
-  left: 0;
-}
-
-.hero-section .overlap-group {
-  position: absolute;
-  height: 306px;
-}
-
-.hero-section .div {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-end;
-  position: absolute;
-  top: 0;
-  left: 23px;
-}
-
-.hero-section .div > * {
-  margin-bottom: -50px; /* Negative margin to create an overlap effect */
-}
-
-/* Resetting the margin for the last child to prevent extra spacing at the bottom */
-.hero-section .div > *:last-child {
-  margin-bottom: 0;
-}
-
-
-
-.hero-section .webdesigner {
-  position: relative;
-  width: fit-content;
-  background: #e1eec3;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #f05053, #e1eec3);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #f05053, #e1eec3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-     
-  -webkit-background-clip: text !important;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* text-fill-color: transparent; */
-  font-family: "Jost", sans-serif;
-  font-weight: 800;
-  color: transparent;
-  font-size: 220px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-}
-
-.hero-section .text-wrapper {
-  position: relative;
-  width: fit-content;
-  font-family: "Jost", sans-serif;
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
 }
 
 .hero-section .cool-sites {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
   gap: 10px;
   padding: 20px 32px;
   position: absolute;
-  top: 40px;
+  top: 200px;
   left: 6px;
   background-color: #ffd013;
   border-radius: 12px;
   transform: rotate(-16.93deg);
-}
-
-.hero-section .text-wrapper-2 {
-  position: relative;
-  width: fit-content;
-  margin-top: -1px;
-  font-family: "Inter-Bold", Helvetica;
-  font-weight: 700;
-  color: #000000;
-  font-size: 20px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
 }
 
 .hero-section .group {
@@ -120,115 +36,107 @@
   left: 182px;
 }
 
+.svg-container {
+  position: relative;
+  background-color: black;
+  overflow: visible;
+}
 
+.framer {
+  position: relative;
 
+  overflow: hidden;
+}
 
+.main-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
 
+.gradient-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-image: url('img/gradient.svg');
+  background-size: cover; /* Ensures that the background covers the entire element */
+  background-position: center; /* Centers the background image */
+  background-repeat: no-repeat; /* Prevents the background image from repeating */
+  border-radius: 50%;
+  z-index: 1;
+  animation: revealGradient 1.5s forwards;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* General styles - already provided */
-
-/* ... existing styles ... */
-
-/* Mobile responsiveness */
-@media only screen and (max-width: 600px) {
-  .hero-section {
-      max-width: 100%; /* Adjust max-width for mobile */
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start; /* Change alignment for mobile */
+@keyframes revealGradient {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0;
   }
-
-  .hero-section .frame {
-      width: 100%; /* Full width on mobile */
-      height: auto; /* Height auto for flexible layout */
+  100% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
   }
+}
 
-  .hero-section .overlap {
-      height: auto; /* Adjust height for mobile */
-  }
-
-  .hero-section .text {
-      top: initial;
-      bottom: -190px; /* Move text to the bottom */
-  }
-
-  .hero-section .overlap-group {
-      position: relative; /* Change position for mobile */
-      top: 0; /* Adjust top position */
-      height: auto; /* Flexible height */
-      order: -1; /* Move overlap-group to the top */
-  }
-
-  @media only screen and (max-width: 600px) {
-    /* ... other responsive styles ... */
-
-    .hero-section .webdesigner {
-        font-size: 15vw; /* Use viewport width for scaling */
-        max-width: 100%; /* Ensure it doesn't exceed the screen width */
-        overflow-wrap: break-word; /* Breaks the word to prevent overflow */
-        text-align: center; /* Center the text */
-        padding: 0 20px; /* Add some padding on the sides */
-        line-height: 1.2; /* Adjust line height if needed */
-    }
-
-    /* ... other responsive styles ... */
+.cool-sites, .group {
+  position: relative;
+  z-index: 3;
 }
 
 
-  .hero-section .text-wrapper, .hero-section .text-wrapper-2 {
-      font-size: 16px; /* Adjust font size for readability */
+
+
+
+/* Mobile Responsive Styles */
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    height: 50vh;
+  }
+
+ .hero-section .group {
+    position: static;
+    width: auto; /* Adjust width for smaller screens */
+    margin-top: 30px;
+  }
+
+  .hero-section .group {
+    position: absolute; /* Use absolute positioning */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the element's own size */
+    width: 100%; /* Adjust width to fit container */
+    max-width: 800px; /* Max-width to control the size on mobile */
   }
 
   .hero-section .cool-sites {
-      top: initial;
-      bottom: -10px; /* Move cool-sites below the image */
-      left: initial;
-      right: -156px; /* Adjust position */
-      transform: rotate(-16.93deg); /* Reset rotation */
-      padding: 20px 24px; /* Reduced padding for mobile devices */
-  }
-
-  .hero-section .group {
-      position: relative; /* Change position for mobile */
-      width: 100%; /* Full width on mobile */
-      height: auto; /* Adjust height */
-      top: initial; /* Reset top */
-      left: initial; /* Reset left */
-      order: 1; /* Move group image below the overlap-group */
-  }
-
-
-
-
-  .hero-section .group {
-    margin-top: 30px; /* Add space above the image */
-  }
-
-  /* ... other responsive styles ... */
-
-
-  .hero-section .text-wrapper {
-    display: none; /* This will hide the text on mobile devices */
+    display: none; /* Hides the .cool-sites element on screens smaller than 768px */
 }
 
-
-
-  .nav-bar .location {
-    display: none;
+  .svg-container, .framer {
+    /* Adjust these styles as needed for smaller screens */
+    position: relative; /* Ensure the parent is positioned relatively */
   }
+
+  /* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .gradient-circle {
+      width: 50px; /* Smaller size for mobile devices */
+      height: 50px;
+      /* You can also adjust the position if needed */
+  }
+
+  /* Other mobile-specific styles can go here */
 }
+
+}
+
+/* Additional media queries as needed */

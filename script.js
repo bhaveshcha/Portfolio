@@ -374,3 +374,16 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector('.full-width').style.backgroundPosition = backgroundPosition;
   });
 
+
+
+
+
+
+
+
+
+
+
+
+
+  

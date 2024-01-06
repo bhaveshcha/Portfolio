@@ -58,7 +58,7 @@
   }
 
   .container_new.flex-vert-center {
-      height: 400px; /* Adjust height for smaller screens */
+      height: 370px; /* Adjust height for smaller screens */
   }
 
   .title-gsap.margin-bottom-custom1 {
