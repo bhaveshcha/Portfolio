@@ -137,6 +137,11 @@
   /* Other mobile-specific styles can go here */
 }
 
+.svg-container {
+  margin-left: 10px; /* Adds a left margin of 10px */
+  margin-right: 10px; /* Adds a right margin of 10px */
+}
+
 }
 
 /* Additional media queries as needed */
