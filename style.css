@@ -184,7 +184,14 @@ body {
 
 
 
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+  .location {
+      display: none; /* This will hide the .location div on screens smaller than 768px */
+  }
 
+  /* Other mobile-specific styles can go here */
+}
 
 
 
