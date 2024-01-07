@@ -3,6 +3,7 @@
 
 .intro-text {
   position: relative;
+  top: -2rem;
   overflow: visible
 }
 
