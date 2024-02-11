@@ -140,6 +140,85 @@ body {
 
 
 
+/* styling.styling.styling.styling */
+
+
+
+h1, h2, h3, h4, h5, p {
+  font-family: 'Jost', sans-serif;
+  color: #000;
+  margin: 0;
+}
+
+
+
+h1 {
+  font-size: 4em;
+  line-height: 1.4; /* Average line height */
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 22px; 
+  color: #1ED760;
+}
+
+h5{
+  font-size: 18px; 
+}
+
+
+p {
+  font-size: 16px; 
+  font-weight: 400; /* Regular weight */
+}
+
+p.p1 {
+  font-size: 24px; 
+}
+
+p.p2 {
+  font-weight: 500; /* Medium weight */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
