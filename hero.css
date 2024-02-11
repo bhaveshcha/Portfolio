@@ -97,9 +97,13 @@
 /* Mobile Responsive Styles */
 
 @media screen and (max-width: 768px) {
+  html, body {
+    height: 100%;
+  }
+  
   .hero-section {
     flex-direction: column;
-    height: 50vh;
+    min-height: 50%; /* This will work if the parent's height is defined */
   }
 
  .hero-section .group {

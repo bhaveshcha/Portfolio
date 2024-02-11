@@ -17,11 +17,6 @@
 
 
 
-
-
-
-
-
   gsap.registerPlugin(ScrollTrigger);
 
   window.addEventListener('load', () => {
@@ -66,6 +61,33 @@
         msnry.layout();
     });
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -386,4 +408,24 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-  
+  // JavaScript for Testimonials Slider
+document.addEventListener('DOMContentLoaded', (event) => {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+
+    function setActiveSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            dots[i].classList.remove('active');
+        });
+        slides[index].classList.add('active');
+        dots[index].classList.add('active');
+    }
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => setActiveSlide(index));
+    });
+
+    // Initialize the first slide and dot as active
+    setActiveSlide(0);
+});
