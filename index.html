@@ -109,7 +109,7 @@
                   <div id="time" class="font-s-small">8:09 PM</div>
               </div>
               <div class="location_col weather">
-                  <img src="https://res.cloudinary.com/fazurrehman/image/upload/v1697663904/weather-icon/snow.svg" loading="lazy" id="weather-icon" alt="" class="weather_icon">
+                  <img src="img/snow.svg" loading="lazy" id="weather-icon" alt="" class="weather_icon">
               </div>
           </div>
           
@@ -700,55 +700,82 @@ const cursor = new MouseFollower({
 
                         <div class="content">
                             <div class="testimonials-container">
-                                <div class="frame33">
-
-                                    <p class="p2">Testimonials</p>
-
-                                    <div class="slider-container">
-                                        <div class="slide active">
-                                            <!-- Testimonial 1 Content -->
-                                            <div class="frame-222">
-                                                <p class="text-wrapper">"It’s one of the best I’ve seen"</p>
-                                                <p>
-                                                    I like that it's user-friendly and it doesn't require a huge learning curve. 
-                                                    I also like the customization feature and the wide spread of ethnicities available.
-                                                </p>
-                                                <div class="user-info">
-                                                    <p class="p2">John I.</p>
-                                                    <p>America's EUC Leader at DuPont</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <div class="slide">
-                                            <!-- Testimonial 2 Content -->
-
-                                            <div class="frame-222">
-                                                <p class="text-wrapper">"yoyo"</p>
-                                                <p>
-                                                    I like that it's user-friendly and it doesn't require a huge learning curve. 
-                                                    I also like the customization feature and the wide spread of ethnicities available.
-                                                </p>
-                                                <div class="text-col3">
-                                                    <div class="review_name p">John wickI.</div>
-                                                    <div class="review_info p">America's EUC Leader at DuPont</div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <!-- Additional testimonials -->
+                              <div class="frame33">
+                                <p class="p2">Testimonials</p>
+                                <div class="slider-container">
+                                  <!-- Testimonial 1 -->
+                                  <div class="slide">
+                                    <div class="frame-222">
+                                      <p class="text-wrapper">"Impressive Design"</p>
+                                      <p>Impressive work! Your attention to detail and seamless user experience are truly inspiring</p>
+                                      <div class="post-container">
+                                        <img class="avatar" alt="Konger" src="img/11 (1).png">
+                                        <div class="user-info">
+                                        <p class="p2">Alex B.</p>
+                                        <p>UX Researcher</p>
                                     </div>
-                                    <div class="slider-dots">
-                                        <span class="dot active"></span>
-                                        <span class="dot"></span>
-                                        <span class="dot"></span>
-                                        <!-- More dots corresponding to the number of testimonials -->
                                     </div>
-
                                 </div>
-                            </div>    
-                        </div>
-                        
+                                  </div>
+                                  <!-- Testimonial 2 -->
+                                  <div class="slide">
+                                    <div class="frame-222">
+                                      <p class="text-wrapper">"Innovative Solutions"</p>
+                                      <p>Your innovative solutions enhance user experience remarkably. Pleasure collaborating with you!</p>
+                                      <div class="post-container">
+                                        <img class="avatar" alt="Konger" src="img/11 (2).png">
+                                        <div class="user-info">
+                                        <p class="p2">Michael R.</p>
+                                        <p>UI Developer</p>
+                                      </div>
+                                    </div></div>
+                                  </div>
+                                  <!-- Testimonial 3 -->
+                                  <div class="slide">
+                                    <div class="frame-222">
+                                      <p class="text-wrapper">"Exceptional Talent"</p>
+                                      <p>Invaluable contributions! Your exceptional talent translates complex requirements into elegant designs.</p>
+                                      <div class="post-container">
+                                        <img class="avatar" alt="Konger" src="img/11 (3).png">
+                                      <div class="user-info">
+                                        <p class="p2">David L.</p>
+                                        <p>Head of Design Department</p>
+                                      </div>
+                                    </div></div>
+                                  </div>
+                                  <!-- Testimonial 4 -->
+                                  <div class="slide">
+                                    <div class="frame-222">
+                                      <p class="text-wrapper">"Expert Craftsmanship"</p>
+                                      <p>Rewarding experience working with you! Your expert craftsmanship sets a high standard for our team.</p>
+                                      <div class="post-container">
+                                        <img class="avatar" alt="Konger" src="img/11 (4).png">
+                                      <div class="user-info">
+                                        <p class="p2">Alex B.</p>
+                                        <p>UX Researcher</p>
+                                      </div>
+                                    </div></div>
+                                  </div>
+                                  <!-- Slider dots corresponding to the number of testimonials -->
+                                  <div class="slider-dots">
+                                    <span class="dot active" onclick="showSlide(0)"></span>
+                                    <span class="dot" onclick="showSlide(1)"></span>
+                                    <span class="dot" onclick="showSlide(2)"></span>
+                                    <span class="dot" onclick="showSlide(3)"></span>
+                                    <!-- Add more dots for additional testimonials -->
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="slider-arrow left" onclick="slideLeft()"></div>
+                            <div class="slider-arrow right" onclick="slideRight()"></div>
+                          </div>
+                          
+                          
+                          
+                          
+                          
+                          
                             
 
 

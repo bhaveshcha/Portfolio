@@ -306,13 +306,13 @@ function getWeatherIcon(weatherCondition) {
   switch (weatherCondition) {
       case "Clear":
       default:
-          return "https://res.cloudinary.com/fazurrehman/image/upload/v1697663904/weather-icon/clear.svg";
+          return "img/clear.svg";
       case "Clouds":
-          return "https://res.cloudinary.com/fazurrehman/image/upload/v1697663904/weather-icon/clouds.svg";
+          return "img/clouds.svg";
       case "Rain":
-          return "https://res.cloudinary.com/fazurrehman/image/upload/v1697663905/weather-icon/rain.svg";
+          return "img/rain.svg";
       case "Snow":
-          return "https://res.cloudinary.com/fazurrehman/image/upload/v1697663904/weather-icon/snow.svg";
+          return "img/snow.svg";
   }
 }
 
@@ -429,3 +429,46 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Initialize the first slide and dot as active
     setActiveSlide(0);
 });
+
+
+
+
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const sliderContainer = document.querySelector('.slider-container');
+
+function showSlide(index) {
+  slides[currentSlideIndex].classList.remove('active');
+  slides[index].classList.add('active');
+  dots[currentSlideIndex].classList.remove('active');
+  dots[index].classList.add('active');
+  currentSlideIndex = index;
+}
+
+function slideLeft() {
+  let newIndex = currentSlideIndex - 1;
+  if (newIndex < 0) {
+    newIndex = slides.length - 1;
+  }
+  showSlide(newIndex);
+}
+
+function slideRight() {
+  let newIndex = currentSlideIndex + 1;
+  if (newIndex >= slides.length) {
+    newIndex = 0;
+  }
+  showSlide(newIndex);
+}
+
+// Function to auto animate the slider smoothly after 5 seconds
+function autoAnimateSlider() {
+  setInterval(() => {
+    sliderContainer.style.transition = 'transform 0.5s ease-in-out';
+    slideRight();
+  }, 5000);
+}
+
+// Start auto animation
+autoAnimateSlider();

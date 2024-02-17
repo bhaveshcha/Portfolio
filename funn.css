@@ -616,6 +616,22 @@ position: relative;
   background-color: #717171;
 }
 
+.post-container {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  margin-right: 10px; /* Adjust spacing between image and user info */
+}
+
+.user-info {
+  flex: 1; /* Take up remaining space */
+}
+
+/* Additional styles to ensure user info is on the right */
 .user-info {
   display: flex;
   flex-direction: column;
@@ -626,3 +642,63 @@ position: relative;
 .testimonials-container {
   position: relative;
 }
+
+
+
+.slider-arrow {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px; /* Adjust as needed */
+  z-index: 1;
+  cursor: pointer;
+}
+
+.slider-arrow.left {
+  left: 0;
+  background: linear-gradient(to right, rgba(245, 245, 247, 0.5) 0%, transparent 100%);
+}
+
+.slider-arrow.right {
+  right: 0;
+  background: linear-gradient(to left, rgba(245, 245, 247, 0.5) 0%, transparent 100%);
+}
+
+.slider-arrow.left:hover {
+  background: linear-gradient(to right, rgba(207, 207, 207, 0.7) 0%, transparent 100%);
+}
+
+.slider-arrow.right:hover {
+  background: linear-gradient(to left, rgba(207, 207, 207, 0.7) 0%, transparent 100%);
+}
+
+.slider-arrow.left:active {
+  background: linear-gradient(to right, rgba(245, 245, 247, 0.9) 0%, transparent 100%);
+}
+
+.slider-arrow.right:active {
+  background: linear-gradient(to left, rgba(245, 245, 247, 0.9) 0%, transparent 100%);
+}
+
+
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust spacing as needed */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #333;
+}
+
+
