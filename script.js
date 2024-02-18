@@ -409,7 +409,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
   // JavaScript for Testimonials Slider
-document.addEventListener('DOMContentLoaded', (event) => {
+  document.addEventListener('DOMContentLoaded', (event) => {
     const slides = document.querySelectorAll('.slide');
     const dots = document.querySelectorAll('.dot');
 
@@ -430,45 +430,63 @@ document.addEventListener('DOMContentLoaded', (event) => {
     setActiveSlide(0);
 });
 
-
-
-
 let currentSlideIndex = 0;
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
-const sliderContainer = document.querySelector('.slider-container');
 
 function showSlide(index) {
-  slides[currentSlideIndex].classList.remove('active');
-  slides[index].classList.add('active');
-  dots[currentSlideIndex].classList.remove('active');
-  dots[index].classList.add('active');
-  currentSlideIndex = index;
+    slides[currentSlideIndex].classList.remove('active');
+    slides[index].classList.add('active');
+    dots[currentSlideIndex].classList.remove('active');
+    dots[index].classList.add('active');
+    currentSlideIndex = index;
 }
 
 function slideLeft() {
-  let newIndex = currentSlideIndex - 1;
-  if (newIndex < 0) {
-    newIndex = slides.length - 1;
-  }
-  showSlide(newIndex);
+    let newIndex = currentSlideIndex - 1;
+    if (newIndex < 0) {
+        newIndex = slides.length - 1;
+    }
+    showSlide(newIndex);
 }
 
 function slideRight() {
-  let newIndex = currentSlideIndex + 1;
-  if (newIndex >= slides.length) {
-    newIndex = 0;
-  }
-  showSlide(newIndex);
+    let newIndex = currentSlideIndex + 1;
+    if (newIndex >= slides.length) {
+        newIndex = 0;
+    }
+    showSlide(newIndex);
 }
 
-// Function to auto animate the slider smoothly after 5 seconds
-function autoAnimateSlider() {
-  setInterval(() => {
-    sliderContainer.style.transition = 'transform 0.5s ease-in-out';
-    slideRight();
-  }, 5000);
-}
 
-// Start auto animation
-autoAnimateSlider();
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   const textToType = "Here is the text you want to type out, one character at a time. It breaks when necessary.";
+//   const typedTextSpan = document.getElementById('typed-text');
+//   const cursorSpan = document.getElementById('cursor');
+//   let index = 0;
+
+//   function typeLetter() {
+//       if (index < textToType.length) {
+//           typedTextSpan.textContent += textToType.charAt(index);
+//           index++;
+//           setTimeout(typeLetter, 50); // Adjust typing speed as needed
+//       } else {
+//           cursorSpan.style.display = 'none'; // Optionally hide the cursor at the end
+//       }
+//   }
+
+//   typeLetter();
+// });

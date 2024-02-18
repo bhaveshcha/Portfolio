@@ -618,7 +618,8 @@ position: relative;
 
 .post-container {
   display: flex;
-  align-items: center;
+  gap: 12px;
+  flex-direction: column;
 }
 
 .avatar {
@@ -700,5 +701,7 @@ position: relative;
 .dot.active {
   background-color: #333;
 }
+
+
 
 
